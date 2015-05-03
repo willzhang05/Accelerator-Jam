@@ -1,7 +1,9 @@
 
 
 
-public class soundPlayer(file)
+public class soundPlayer(String file)
 {
-   public void
+   public void play()
+   {
+   }
 }
