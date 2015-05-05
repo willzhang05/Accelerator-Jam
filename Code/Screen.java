@@ -1,10 +1,17 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class Screen extends Jpanel
+public class Screen
 {
-   private long xDim;
-   private long yDim;
+
+   private Graphics pen;
+   private Panel panel;
+
+   public Screen(Panel jPanel, Graphics jPanelPen)
+   {  
+      panel = jPanel;
+      pen = jPanelPen;
+   }
 
    public void paintComponent()
    {
