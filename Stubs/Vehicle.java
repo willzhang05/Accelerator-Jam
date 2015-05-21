@@ -1,6 +1,9 @@
 public class Vehicle
 {
-
+/**
+@author Antioch Sanders
+@version 0.0.1
+**/
    /**
    * Vehicle private members
    */
