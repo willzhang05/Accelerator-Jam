@@ -10,7 +10,7 @@ public class GameDriver
       frame.setSize(600, 600);
       frame.setLocationRelativeTo(null);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setContentPane(new GamePanel());
+      frame.setContentPane(new mainMenu());
       frame.setVisible(true);
    }
 }
