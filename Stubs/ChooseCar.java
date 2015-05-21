@@ -64,7 +64,7 @@ public class ChooseCar extends JPanel
    }
 
    /**
-   * COntinue to game
+   * Continue to game
    */
    public class play implements ActionListener 
    {

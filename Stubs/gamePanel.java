@@ -6,25 +6,32 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-public class gamePanel extends JFrame{
-    /*private BufferedImage myImage;
+public class gamePanel extends main{
+/**
+@author William Zhang and Antioch Sanders
+@version 0.0.1
+**/    
+	/*private BufferedImage myImage;
     private Timer updateTimer;
     private int frameRate = 20;
     private final int N = 600;
     private int position = 0;*/
     
     public gamePanel(){
-        init();
-        /*myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
-        Graphics buffer = myImage.getGraphics();
-        updateTimer = new Timer(1000 / frameRate, new Listener());
-        updateTimer.start();*/
-    }
-    private void init(){
+		/**
+		* Class gamePanel extends main.
+		@see main
+		* Shows after startButton is pressed on the mainMenu.
+		@see mainMenu
+		**/
         setTitle("Accelerator Jam");
         setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        /*myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
+        Graphics buffer = myImage.getGraphics();
+        updateTimer = new Timer(1000 / frameRate, new Listener());
+        updateTimer.start();*/
     }
     /*public void paintComponent(Graphics pen){
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
