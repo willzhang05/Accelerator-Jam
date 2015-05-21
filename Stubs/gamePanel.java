@@ -33,7 +33,13 @@ public class gamePanel extends main{
         updateTimer = new Timer(1000 / frameRate, new Listener());
         updateTimer.start();*/
     }
-    /*public void paintComponent(Graphics pen){
+    public void paintComponent(Graphics pen){
+		/**
+		* Method 
+		@see main
+		* Shows after startButton is pressed on the mainMenu.
+		@see mainMenu
+		**/
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
         drawBackGround(pen);
     }

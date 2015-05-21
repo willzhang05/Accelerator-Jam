@@ -25,7 +25,9 @@ public class mainMenu extends main{
 		/**
 		* On button click, a new gamePanel is instantiated and replaces mainMenu.
 		@see gamePanel
+		@return the startButton
 		* Utilizes ActionListener.
+		@see ActionListener
 		**/
         JButton sB = new JButton("Start");
         sB.addActionListener(new ActionListener(){
@@ -40,7 +42,9 @@ public class mainMenu extends main{
 		/**
 		* On button click, exit the program.
 		@see System
+		@return the quitButton
 		* Utilizes ActionListener.
+		@see ActionListener
 		**/
         JButton qB = new JButton("Quit");
         qB.addActionListener(new ActionListener(){
