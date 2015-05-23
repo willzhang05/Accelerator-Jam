@@ -18,7 +18,7 @@ public class ChooseCar extends JPanel
    /**
    * Create GUI buttons and such
    */
-   public createGUI()
+   public void createGUI()
    {
    }
    
@@ -39,7 +39,7 @@ public class ChooseCar extends JPanel
    /**
    * Returns selected vehicle 
    */   
-   public Vehicle select()
+   public void select()
    {
    }
    

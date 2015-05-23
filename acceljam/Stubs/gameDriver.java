@@ -1,6 +1,5 @@
 import javax.swing.JFrame;
 
-
 public class gameDriver
 /**
 @author Antioch
@@ -14,11 +13,10 @@ public class gameDriver
       * Creates frame for GamePanel
       **/
       JFrame frame = new JFrame("AcceleratorJam");
-
       frame.setSize(600, 600);
       frame.setLocationRelativeTo(null);
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setContentPane(new GamePanel());
+      frame.setContentPane(new gamePanel());
       frame.setVisible(true);
    }
 }

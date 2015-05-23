@@ -1,12 +1,10 @@
-package acceljam;
-
 import java.awt.EventQueue;
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.image.BufferedImage;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.*;
 
-public class gamePanel extends main{
+public class gamePanel extends JPanel{
 /**
 @author William Zhang and Antioch Sanders
 @version 0.0.1
@@ -18,26 +16,21 @@ public class gamePanel extends main{
     private int position = 0;
     
     public gamePanel(){
-		/**
-		* Class gamePanel extends main.
-		@see main
-		* Shows after startButton is pressed on the mainMenu.
-		@see mainMenu
-		**/
+		
 
     }
     public void paintComponent(Graphics pen){
-<<<<<<< HEAD
+
 		/**
 		* Method 
 		@see main
 		* Shows after startButton is pressed on the mainMenu.
 		@see mainMenu
 		**/
-        pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
+      
+        pen.drawImage(myImage, 0, 0, N, N, null);
         drawBackGround(pen);
-=======
->>>>>>> origin/master
+
     }
     public void drawBackGround(Graphics pen){        
     }
@@ -49,7 +42,7 @@ public class gamePanel extends main{
         }
     }
 
-    private class Listener implements ActionListener{
+    private class pauseListener implements ActionListener{
         public void actionPerformed(ActionEvent e){
        /**
        * Check for pause
