@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2db54f5a-5092-408f-8947-883804e2dda2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Accelerator-Jam.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Logo\AccelJamLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Logo\AccelJamLogo.psd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Logo\gas-pedal.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Logo\jam-on-toast.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\Autobahn-Dual-v0.1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\Autobahn-Dual-v0.1.psd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\Autobahn-v0.1.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\Autobahn-v0.1.psd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\Autobahn.psd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Maps\Autobahn\road.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\Reference\Mühlkreis_Autobahn_Ende.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\Stubs\resources\ic_launcher.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\resources\images\Logo\AccelJamLogo.png" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\resources\images\Logo\AccelJamLogo.psd" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\resources\images\Logo\gas-pedal.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\resources\images\Logo\jam-on-toast.jpg" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\William Zhang\Documents\GitHub\Accelerator-Jam\acceljam\resources\images\perfectRoad.PNG" afterPath="" />
-    </list>
+    <list default="true" id="2db54f5a-5092-408f-8947-883804e2dda2" name="Default" comment="" />
     <ignored path="Accelerator-Jam.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -175,6 +155,9 @@
       </pane>
     </panes>
   </component>
+  <component name="PropertiesComponent">
+    <property name="FullScreen" value="false" />
+  </component>
   <component name="RunManager">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
@@ -263,6 +246,9 @@
     </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="2db54f5a-5092-408f-8947-883804e2dda2" name="Default" comment="" />
@@ -299,6 +285,14 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
