@@ -1,7 +1,8 @@
-//import java.awt.EventQueue;
+import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
@@ -11,6 +12,7 @@ public class GamePanel extends JPanel{
     private Timer updateTimer;
     private int frameRate = 60;
     public final int N = 600;
+    public int frameNumber = 0;
     private int position = 0;
     private RelativeObject background;
     private RelativeObject player;
@@ -19,45 +21,73 @@ public class GamePanel extends JPanel{
         myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
         myBuffer = myImage.getGraphics();
         updateTimer = new Timer(1000 / frameRate, new Listener());
-        updateTimer.start();
-        addKeyListener(new MovementKeyListener);
+        addKeyListener(new MovementKeyListener());
+        setFocusable(true);
 
-        background = new RelativeObject(0, 0, N, 2*N, "Autoban.png");
+        String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");        
+        background = new RelativeObject(0, 0, N, 2*N, "Roads\\"+roadType+".png");
 
-        player = new RelativeObject(70,70,30,30,"basicCar.png");
+        String carType = JOptionPane.showInputDialog("Enter filename (van)");
+        player = new RelativeObject(N/2 - 35, 485, 70, 105, "Vehicles\\"+carType+".png");
         player.setSpeed(10);
-
+        updateTimer.start();
     }
     public void paintComponent(Graphics pen){           //Repaint the screen
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
+        frameNumber += 1;
     }
 
     private class Listener implements ActionListener{   //Timer
         public void actionPerformed(ActionEvent e){
            update();
            repaint();
-           
         }
     }
 
     public void update(){                               //Update game
         myBuffer.clearRect(0,0, N, N);
-        background.drawObj(myBuffer);
+        background.drawBg(myBuffer);
         background.moveRelativeTo(player);
+        player.moveDirection(frameNumber);
         player.drawObj(myBuffer);
     }
     
     
     
-    
-    class MovementKeyListener extends KeyAdapter{
-    
+
+    private class MovementKeyListener extends KeyAdapter{
         public void keyPressed(KeyEvent event){
-            if (event.getKeyCode == VK_LEFT){
-               set player direction left
-            }
-            else if (){
-               set player direction right 
+            int tempDir = 0;
+            if (event.getKeyCode() == 37 || event.getKeyCode() == 39){
+               if (event.getKeyCode() == 37){               //Left
+                  tempDir = player.LEFT;
+               }
+               else if (event.getKeyCode() == 39){    //Right
+                  tempDir = player.RIGHT;
+               }
+               if(tempDir != player.getDirection()){
+                  player.setHandlingSpeed(player.getMinHandlingSpeed());
+               }
+               player.setDirection(tempDir);
+           }
+        }
+        public void keyReleased(KeyEvent event){
+            if (event.getKeyCode() == 37 || event.getKeyCode() == 39){
+               int tempDir = 0;
+               if (event.getKeyCode() == 37){
+                  if(player.getDirection() == player.LEFT){
+                     tempDir = player.NO_DIR;
+                  }
+               }
+               else if (event.getKeyCode() == 39){
+                  if(player.getDirection() == player.RIGHT){
+                     tempDir = player.NO_DIR;
+                  }
+               }
+               if(tempDir != player.getDirection()){
+                  player.setHandlingSpeed(player.getMinHandlingSpeed());
+               }
+               player.setDirection(tempDir);
             }
         }
     }

@@ -2,18 +2,15 @@ import javax.swing.*;
 import java.awt.Graphics;
 
 public class RelativeObject extends GameObject{
-   private int speed = 0;
-   private String imageName;
 
    public RelativeObject(int startX, int startY, int startWidth, int startHeight, String image){
-      super(startX, startY, startWidth, startHeight);
-      imageName = image;
+      super(startX, startY, startWidth, startHeight, image);
    }
 
 
 
-   public void drawObj(Graphics myBuffer){
-      ImageIcon myPortrait = new ImageIcon(imageName);
+   public void drawBg(Graphics myBuffer){                                                         //Background object
+      ImageIcon myPortrait = new ImageIcon(getImageName());
       myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
                                                 getWidth() , getHeight(), null);
       if (getY()>=0){
@@ -26,15 +23,15 @@ public class RelativeObject extends GameObject{
       }
    }
 
-   public void moveRelativeTo(RelativeObject anchor){
-        moveY(anchor.getSpeed()-speed);
-   }
-   
-   public void setSpeed(int newSpeed){
-      speed = newSpeed;
+   public void drawObj(Graphics myBuffer){                                                        //Vehicle      
+      ImageIcon myPortrait = new ImageIcon(getImageName());
+      myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
+                                                getWidth() , getHeight(), null);
    }
 
-   public int getSpeed(){
-      return speed;
-   }   
+   public void moveRelativeTo(GameObject anchor){                                             //Relative object
+        moveY(anchor.getSpeed()-getSpeed());
+   }
+
+   
 }

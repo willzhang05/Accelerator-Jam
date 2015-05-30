@@ -1,17 +1,21 @@
+import javax.swing.*;
 import java.awt.Graphics;
 
 public abstract class GameObject{
 
-   private int x;                              //Fields
+   private int speed = 0;
+   private String imageName;
+   private int x;
    private int y;
    private int width;
    private int height;
 
-   public GameObject(int startX, int startY, int startWidth, int startHeight){     //Constructor
+   public GameObject(int startX, int startY, int startWidth, int startHeight, String image){     //Constructor
       x = startX;
       y = startY;
       width = startWidth;
       height = startHeight;
+      imageName = image;
    }
 
    public abstract void drawObj(Graphics pen);
@@ -59,18 +63,21 @@ public abstract class GameObject{
    
    public void setHeight(int newHeight){
       height = newHeight;
-   }   
+   }
+
+   public void setSpeed(int newSpeed){                                                            //Everyone
+      speed = newSpeed;
+   }
+
+   public int getSpeed(){
+      return speed;
+   }
    
-   public void resizeX(int dWidth){              //Resize
-      width = dWidth;
+   public String getImageName(){
+      return imageName;
    }
-
-   public void resizeY(int dHeight){
-      height = dHeight;
-   }
-
-   public void resize(int dWidth, int dHeight){
-      width = dWidth;
-      height = dHeight;
+   
+   public void setImageName(String newImageName){
+      imageName = newImageName;
    }
 }
