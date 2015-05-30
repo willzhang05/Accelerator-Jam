@@ -7,7 +7,12 @@ public class SmartVehicleObject extends VehicleObject{
       super(startX, startY, startWidth, startHeight, image);
    }
 
+   public void switchLanesLeft(){
+      
+   }
 
-
+   public void switchLanesRight(){
+      
+   }
 
 }

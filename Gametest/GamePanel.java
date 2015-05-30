@@ -14,7 +14,7 @@ public class GamePanel extends JPanel{
     public final int N = 600;
     public int frameNumber = 0;
     private int position = 0;
-
+    public SmartVehicleGenerator generator;
     private MapObject background;
     private PlayerObject player;
 
@@ -28,8 +28,10 @@ public class GamePanel extends JPanel{
         String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");        
         background = new MapObject(N, "Roads\\"+roadType+".png");
 
+
         String carType = JOptionPane.showInputDialog("Enter filename (van)");
         player = new PlayerObject(N/2 - 35, 485, 70, 105, "Vehicles\\"+carType+".png");
+        generator = new SmartVehicleGenerator(-500, myBuffer, player);
         player.setSpeed(10);
         updateTimer.start();
     }
@@ -49,6 +51,7 @@ public class GamePanel extends JPanel{
         myBuffer.clearRect(0,0, N, N);
         background.draw(myBuffer);
         background.moveRelativeTo(player);
+        generator.update();
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
     }
