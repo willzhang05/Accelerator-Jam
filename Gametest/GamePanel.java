@@ -14,8 +14,9 @@ public class GamePanel extends JPanel{
     public final int N = 600;
     public int frameNumber = 0;
     private int position = 0;
-    private RelativeObject background;
-    private RelativeObject player;
+
+    private MapObject background;
+    private PlayerObject player;
 
     public GamePanel(){                                 //Instantiator
         myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
@@ -25,10 +26,10 @@ public class GamePanel extends JPanel{
         setFocusable(true);
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");        
-        background = new RelativeObject(0, 0, N, 2*N, "Roads\\"+roadType+".png");
+        background = new MapObject(N, "Roads\\"+roadType+".png");
 
         String carType = JOptionPane.showInputDialog("Enter filename (van)");
-        player = new RelativeObject(N/2 - 35, 485, 70, 105, "Vehicles\\"+carType+".png");
+        player = new PlayerObject(N/2 - 35, 485, 70, 105, "Vehicles\\"+carType+".png");
         player.setSpeed(10);
         updateTimer.start();
     }
@@ -46,14 +47,11 @@ public class GamePanel extends JPanel{
 
     public void update(){                               //Update game
         myBuffer.clearRect(0,0, N, N);
-        background.drawBg(myBuffer);
+        background.draw(myBuffer);
         background.moveRelativeTo(player);
         player.moveDirection(frameNumber);
-        player.drawObj(myBuffer);
+        player.draw(myBuffer);
     }
-    
-    
-    
 
     private class MovementKeyListener extends KeyAdapter{
         public void keyPressed(KeyEvent event){
@@ -62,7 +60,7 @@ public class GamePanel extends JPanel{
                if (event.getKeyCode() == 37){               //Left
                   tempDir = player.LEFT;
                }
-               else if (event.getKeyCode() == 39){    //Right
+               else if (event.getKeyCode() == 39){         //Right
                   tempDir = player.RIGHT;
                }
                if(tempDir != player.getDirection()){

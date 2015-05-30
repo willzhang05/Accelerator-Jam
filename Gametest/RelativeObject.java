@@ -7,23 +7,7 @@ public class RelativeObject extends GameObject{
       super(startX, startY, startWidth, startHeight, image);
    }
 
-
-
-   public void drawBg(Graphics myBuffer){                                                         //Background object
-      ImageIcon myPortrait = new ImageIcon(getImageName());
-      myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
-                                                getWidth() , getHeight(), null);
-      if (getY()>=0){
-         myBuffer.drawImage(myPortrait.getImage(), getX(), getY()-getHeight(),
-                                                getWidth() , getHeight(), null);
-      }
-      
-      if (getY()>=600){
-         setY(getY()-getHeight());
-      }
-   }
-
-   public void drawObj(Graphics myBuffer){                                                        //Vehicle      
+   public void draw(Graphics myBuffer){                                                       //Vehicle
       ImageIcon myPortrait = new ImageIcon(getImageName());
       myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
                                                 getWidth() , getHeight(), null);
@@ -35,3 +19,4 @@ public class RelativeObject extends GameObject{
 
    
 }
+

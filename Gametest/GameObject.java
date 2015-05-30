@@ -18,7 +18,7 @@ public abstract class GameObject{
       imageName = image;
    }
 
-   public abstract void drawObj(Graphics pen);
+   public abstract void draw(Graphics myBuffer);
 
    public void moveX(int dx){                  //Move
       x += dx;
