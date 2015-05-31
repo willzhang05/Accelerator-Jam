@@ -1,0 +1,8 @@
+width 45
+height 95
+acceleration 3
+minSpeed 20
+topSpeed 80
+topHandlingSpeed 5
+minHandlingSpeed 3
+imagePath Taxi

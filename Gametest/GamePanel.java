@@ -18,7 +18,8 @@ public class GamePanel extends JPanel{
     private MapObject background;
     private PlayerObject player;
 
-    public GamePanel(){                                 //Instantiator
+    public GamePanel(int startFrameRate){               //Constructor
+        frameRate = startFrameRate;
         myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
         myBuffer = myImage.getGraphics();
         updateTimer = new Timer(1000 / frameRate, new Listener());
