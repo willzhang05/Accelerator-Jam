@@ -31,7 +31,7 @@ public class GamePanel extends JPanel{
 
 
         String carType = JOptionPane.showInputDialog("Enter filename (van)");
-        player = new PlayerObject(N/2 - 35, 485, 70, 105, "Vehicles\\"+carType+".png");
+        player = new PlayerObject(N/2 - 35, 485, new VehicleType("taxi"));
         generator = new SmartVehicleGenerator(-500, myBuffer, player);
         player.setSpeed(10);
         updateTimer.start();

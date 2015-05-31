@@ -10,7 +10,7 @@ public class VehicleObject extends RelativeObject{
    private int leftBound = 97;
    private int rightBound = 503;
 
-   public VehicleObject(int startX, int startY, int startWidth, int startHeight, String image){
+   public VehicleObject(int startX, int startY, VehicleType data){
       super(startX, startY, startWidth, startHeight, image);
    }
 

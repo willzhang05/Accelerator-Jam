@@ -16,7 +16,6 @@ public class VehicleType{
    public VehicleType(String startName){
       name = startName;
       readData();
-      System.out.println(getWidth());
    }
    
    public static void main(String[] args){

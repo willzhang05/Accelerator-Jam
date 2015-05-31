@@ -8,7 +8,7 @@ public class PlayerObject extends VehicleObject{
    private int topHandlingSpeed = 30;
    private int minHandlingSpeed = 1;
 
-   public PlayerObject(int startX, int startY, int startWidth, int startHeight, String image){
+   public PlayerObject(int startX, int startY, VehicleType data){
       super(startX, startY, startWidth, startHeight, image);
    }
 
