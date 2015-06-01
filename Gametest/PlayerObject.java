@@ -31,6 +31,15 @@ public class PlayerObject extends VehicleObject{
          handlingSpeed = topHandlingSpeed;
    }
    
+   public boolean checkDeath(SmartVehicleHandler handler){
+      SmartVehicleObject[] vehicles = handler.getVehicles();
+      for (SmartVehicleObject vehicle : vehicles){
+         if(checkCollision(vehicle))
+            return true;
+      }
+      return false;
+   }
+   
    public void setHandlingSpeed(int newHandling){
       handlingSpeed = newHandling;
    }

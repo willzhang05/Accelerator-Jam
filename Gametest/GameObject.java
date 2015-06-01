@@ -20,7 +20,15 @@ public abstract class GameObject{
 
    public abstract void draw(Graphics myBuffer);
 
-   public void moveX(int dx){                  //Move
+   public boolean checkCollision(GameObject rect){
+      if(x>rect.getX()+rect.getWidth() || x+width<rect.getX())
+         return false;
+      if(y>rect.getY()+rect.getHeight() || y+height<rect.getY())
+         return false;
+      return true;
+   }
+
+   public void moveX(int dx){
       x += dx;
    }
    
@@ -33,7 +41,7 @@ public abstract class GameObject{
       y += dy;
    }
 
-   public int getX(){                            //Get dimensions
+   public int getX(){
       return x;
    }
 
@@ -49,7 +57,7 @@ public abstract class GameObject{
       return height;
    }
    
-   public void setX(int newX){                            //Set dimensions
+   public void setX(int newX){
       x = newX;
    }
 

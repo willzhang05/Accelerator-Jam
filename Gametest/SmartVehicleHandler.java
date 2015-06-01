@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
-public class SmartVehicleGenerator{
+public class SmartVehicleHandler{
 
    private int height;
    private int leftBound = 97;
@@ -13,7 +13,7 @@ public class SmartVehicleGenerator{
    private Graphics myBuffer;
    public PlayerObject player;
 
-   public SmartVehicleGenerator(PlayerObject startPlayer, Graphics startBuffer, int startHeight){
+   public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){
       height = startHeight;
       myBuffer = startBuffer;
       player = startPlayer;
@@ -30,7 +30,6 @@ public class SmartVehicleGenerator{
          vehicle.moveRelativeTo(player);
          vehicle.draw(myBuffer);
       }
-      
    }
 
    public SmartVehicleObject[] getVehicles(){
