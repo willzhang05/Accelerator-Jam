@@ -32,7 +32,7 @@ vFile.write(str(var)+"\n")
 
 var = raw_input("imagePath: ")
 vFile.write("imagePath ")
-vFile.write(str(var)+"\n")
+vFile.write("\\Resources\\Vehicles\\" + str(var)+"\n")
 
 var = raw_input("\n\n[Action Complete]")
 
