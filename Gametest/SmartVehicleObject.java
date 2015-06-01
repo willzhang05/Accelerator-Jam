@@ -3,8 +3,8 @@ import java.awt.Graphics;
 
 public class SmartVehicleObject extends VehicleObject{
 
-   public SmartVehicleObject(int startX, int startY, VehicleType data){
-      super(startX, startY, startWidth, startHeight, image);
+   public SmartVehicleObject(int startX, int startY, VehicleType startData){
+      super(startX, startY, startData);
    }
 
    public void switchLanesLeft(){

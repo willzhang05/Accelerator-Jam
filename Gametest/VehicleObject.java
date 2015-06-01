@@ -3,6 +3,7 @@ import java.awt.Graphics;
 
 public class VehicleObject extends RelativeObject{
 
+   public VehicleType data;
    public int RIGHT = 1;
    public int LEFT = -1;
    public int NO_DIR = 0;
@@ -10,9 +11,11 @@ public class VehicleObject extends RelativeObject{
    private int leftBound = 97;
    private int rightBound = 503;
 
-   public VehicleObject(int startX, int startY, VehicleType data){
-      super(startX, startY, startWidth, startHeight, image);
+   public VehicleObject(int startX, int startY, VehicleType startData){
+      super(startX, startY, startData.getWidth(), startData.getHeight(), startData.getImagePath());
+      data = startData;
    }
+   
 
    public int getDirection(){
       return direction;

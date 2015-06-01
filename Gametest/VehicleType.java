@@ -3,32 +3,31 @@ import java.io.*;
 
 public class VehicleType{
 
-   private int width;
-   private int height;
-   private int acceleration;
-   private int minSpeed;
-   private int topSpeed;
-   private int topHandlingSpeed;
-   private int minHandlingSpeed;
-   private String imagePath;
+   private int width = 40;
+   private int height = 70;
+   private int acceleration = 3;
+   private int minSpeed = 10;
+   private int topSpeed = 70;
+   private int topHandlingSpeed = 3;
+   private int minHandlingSpeed = 1;
+   private String imagePath = "Vehicles\\blank.png";
    private String name;
 
    public VehicleType(String startName){
       name = startName;
       readData();
    }
-   
-   public static void main(String[] args){
-      new VehicleType("Taxi");
+
+   public VehicleType(){
+      name = "blank";
    }
-   
+
    public void readData(){
       try{
          Scanner reader = new Scanner(new File("Vehicles\\VehicleInfo\\"+name+".vehicle"));
 
          while(reader.hasNext()){
             String nextData = reader.next();
-            System.out.println(nextData);
 
             if (nextData.equals("width"))
                setWidth(reader.nextInt());

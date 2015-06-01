@@ -13,7 +13,7 @@ public class SmartVehicleGenerator{
    private Graphics myBuffer;
    public PlayerObject player;
 
-   public SmartVehicleGenerator(int startHeight, Graphics startBuffer, PlayerObject startPlayer){
+   public SmartVehicleGenerator(PlayerObject startPlayer, Graphics startBuffer, int startHeight){
       height = startHeight;
       myBuffer = startBuffer;
       player = startPlayer;
@@ -22,8 +22,7 @@ public class SmartVehicleGenerator{
    public void update(){
       if (Math.random()<.05){
          int num = (int)Math.floor(Math.random()*4);
-         vehicles.add(new SmartVehicleObject(leftBound + (rightBound-leftBound)/lanes*num +10,
-                                             height, (rightBound-leftBound)/lanes - 2, 105, "Vehicles\\van.png"));
+         vehicles.add(new SmartVehicleObject(leftBound + (rightBound-leftBound)/lanes*num +10, height, new VehicleType()));
          vehicles.get(nextVehicleID).setSpeed((int)Math.floor(Math.random()*10));
          nextVehicleID += 1;
       }

@@ -9,7 +9,7 @@ public class PlayerObject extends VehicleObject{
    private int minHandlingSpeed = 1;
 
    public PlayerObject(int startX, int startY, VehicleType data){
-      super(startX, startY, startWidth, startHeight, image);
+      super(startX, startY, data);
    }
 
    public void moveDirection(int frameNumber){                                                    //Player
