@@ -19,11 +19,11 @@ public class SmartVehicleHandler{
       player = startPlayer;
    }
 
-   public void update(){
+   public void update(){        //Create variables to track availability of putting a new smart vehicle in a lane
       if (Math.random()<.05){
          int num = (int)Math.floor(Math.random()*4);
          vehicles.add(new SmartVehicleObject(leftBound + (rightBound-leftBound)/lanes*num +10, height, new VehicleType()));
-         vehicles.get(nextVehicleID).setSpeed((int)Math.floor(Math.random()*10));
+         vehicles.get(nextVehicleID).setSpeed(15);
          nextVehicleID += 1;
       }
       for(SmartVehicleObject vehicle: getVehicles()){
