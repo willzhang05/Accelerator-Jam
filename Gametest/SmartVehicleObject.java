@@ -14,5 +14,4 @@ public class SmartVehicleObject extends VehicleObject{
    public void switchLanesRight(){
       
    }
-
 }
