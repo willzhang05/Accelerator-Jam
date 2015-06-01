@@ -6,8 +6,9 @@ print "--------"
 for f in files:
     try:
         if f[-6:] == ".class":
-            print "\t"+f
+            print "   "+f
             os.remove(f)
     except IndexError:
         continue
 print "--------"
+pause = raw_input();
