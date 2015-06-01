@@ -10,13 +10,11 @@ public class Sound{
   private Clip clip;
   
   public Sound(String startFile){
-
     try{
-      file = this.getClass().getClassLoader().getResource(startFile);
+      file = this.getClass().getClassLoader().getResource("Resources\\Sounds\\"+startFile);
       audioIn = AudioSystem.getAudioInputStream(file);
       clip = AudioSystem.getClip();
       clip.open(audioIn);
-      clip.start();
     } catch (UnsupportedAudioFileException exception) {
        exception.printStackTrace();
     } catch (IOException exception) {
@@ -25,8 +23,36 @@ public class Sound{
        exception.printStackTrace();
     }
   }
-  
 
+  public void play(){
+     clip.start();
+  }
 
+  public void loop(int repetitions){
+     clip.loop(repetitions - 1);
+  }
+
+  public void loop(){
+     clip.loop(Clip.LOOP_CONTINUOUSLY);
+  }
+
+  public void stop(){
+     if(clip.isRunning())
+        clip.stop();
+  }
+
+  public boolean isRunning(){
+     return clip.isRunning();
+  }
+
+  public void reset(){
+     clip.setFramePosition(0);
+  }
+
+  public static void main(String[] args) throws Exception {
+     Sound me = new Sound("test.wav");
+     me.loop(1);
+     Thread.sleep(7000);
+  }
 
 }
