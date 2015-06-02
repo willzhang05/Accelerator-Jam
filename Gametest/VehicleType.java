@@ -10,7 +10,7 @@ public class VehicleType{
    private int topSpeed = 70;
    private int topHandlingSpeed = 3;
    private int minHandlingSpeed = 1;
-   private String imagePath = "Vehicles\\blank.png";
+   private String imagePath = "Resources\\Vehicles\\blank.png";
    private String name;
 
    public VehicleType(String startName){

@@ -27,11 +27,11 @@ public class GamePanel extends JPanel{
         setFocusable(true);
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");        
-        background = new MapObject(N, "Roads\\"+roadType+".png");
+        background = new MapObject(N, "Resources\\Roads\\"+roadType+".png");
 
         player = new PlayerObject(N/2 - 35, 485, new VehicleType());
-        handler = new SmartVehicleHandler(player, myBuffer, -500);
-        player.setSpeed(10);
+        handler = new SmartVehicleHandler(player, myBuffer, -200);
+        player.setSpeed(20);
         updateTimer.start();
     }
     public void paintComponent(Graphics pen){           //Repaint the screen

@@ -10,8 +10,10 @@ public class SmartVehicleHandler{
    private int lanes = 4;
    private ArrayList<SmartVehicleObject> vehicles = new ArrayList<SmartVehicleObject>();
    private int nextVehicleID = 0;
+   private int laneWidth = leftBound + (rightBound-leftBound)/lanes;
    private Graphics myBuffer;
    public PlayerObject player;
+
 
    public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){
       height = startHeight;
@@ -19,17 +21,17 @@ public class SmartVehicleHandler{
       player = startPlayer;
    }
 
-   public void update(){        //Create variables to track availability of putting a new smart vehicle in a lane
-      if (Math.random()<.05){
-         int num = (int)Math.floor(Math.random()*4);
-         vehicles.add(new SmartVehicleObject(leftBound + (rightBound-leftBound)/lanes*num +10, height, new VehicleType()));
-         vehicles.get(nextVehicleID).setSpeed(15);
-         nextVehicleID += 1;
-      }
+   public void update(){
       for(SmartVehicleObject vehicle: getVehicles()){
          vehicle.moveRelativeTo(player);
          vehicle.draw(myBuffer);
       }
+   }
+
+   public void createVehicle(int lane, VehicleType vehicleType){
+      vehicles.add(new SmartVehicleObject(laneWidth*(lane-1)+10, height, vehicleType));
+      vehicles.get(nextVehicleID).setSpeed(10);
+      nextVehicleID += 1;
    }
 
    public SmartVehicleObject[] getVehicles(){
