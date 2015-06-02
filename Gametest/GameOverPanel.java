@@ -18,6 +18,11 @@ public class GameOverPanel extends JPanel{
     public GameOverPanel(){
         chooseBackground();
         setFocusable(true);
+        //USE GEOMETRY MANAGER, NOT SET LOCATION
+
+//      JButton b = new JButton("Try Again");
+//      b.setLocation(100, 100);
+//      add(b);
     }
     
     public void paintComponent(Graphics pen){
