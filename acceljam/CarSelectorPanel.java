@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.io.*;
 
 
-public class CarSelectorPanel extends JPanel{
+public class CarSelectorPanel extends SmartPanel{
     private BufferedImage myImage;
     private Graphics myBuffer;
     private final int N = 600;
