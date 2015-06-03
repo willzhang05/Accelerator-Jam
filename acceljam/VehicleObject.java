@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class VehicleObject extends RelativeObject{
 
-   public VehicleType data;
+   private VehicleType data;
    public int RIGHT = 1;
    public int LEFT = -1;
    public int NO_DIR = 0;
@@ -43,4 +43,12 @@ public class VehicleObject extends RelativeObject{
    public int getRightBound(){
       return rightBound;
    }
-}   
+
+   public void setData(VehicleType newData){
+      data = newData;
+   }
+   
+   public VehicleType getData(){
+      return data;
+   }
+}

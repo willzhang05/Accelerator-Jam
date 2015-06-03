@@ -17,20 +17,20 @@ public class SmartVehicleHandler{
    public PlayerObject player;
 
 
-   public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){
+   public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){//Constructor
       height = startHeight;
       myBuffer = startBuffer;
       player = startPlayer;
    }
 
-   public void update(){
+   public void update(){                                                                       //move and draw vehicles
       for(SmartVehicleObject vehicle: getVehicles()){
          vehicle.moveRelativeTo(player);
          vehicle.draw(myBuffer);
       }
    }
 
-   public void createVehicle(int lane, VehicleType vehicleType){
+   public void createVehicle(Lane lane, VehicleType vehicleType){                               //
       vehicles.add(new SmartVehicleObject(laneWidth*(lane-1)+10, height, vehicleType));
       vehicles.get(nextVehicleID).setSpeed(10);
       nextVehicleID += 1;
@@ -61,7 +61,7 @@ public class SmartVehicleHandler{
    public int getRightBound(){
       return rightBound;
    }
-   
+
    public void setRightBound(int newRightBound){
       rightBound = newRightBound;
    }
@@ -69,8 +69,23 @@ public class SmartVehicleHandler{
    public int getLanes(){
       return lanes;
    }
-   
+
    public void set(int newLanes){
       lanes = newLanes;
+   }
+
+
+   private class Lane{
+      private int median;
+      private SmartVehicle firstVehicle;
+      private SmartVehicle secondVehicle;
+
+      public Lane(int startMedian){
+          median = startMedian;
+      }
+
+
+
+
    }
 }
