@@ -19,6 +19,8 @@ public class GamePanel extends JPanel{
     public SmartVehicleHandler handler;
     private MapObject background;
     private PlayerObject player;
+    private String vehicleChoices = "AWDhatch, AWDluxury, AWDpickup,\nboxvan, "
+                                   +"coupe, flatbed,\npickup, taxi, van";
 
     public GamePanel(int startFrameRate){               //Constructor
         frameRate = startFrameRate;
@@ -28,10 +30,12 @@ public class GamePanel extends JPanel{
         addKeyListener(new MovementKeyListener());
         setFocusable(true);
 
-        String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");        
-        background = new MapObject(N, "Resources\\Roads\\"+roadType+".png");
+        String roadType = JOptionPane.showInputDialog("Enter road name (Autoban)");
+        background = new MapObject(N, roadType+".png");
 
-        player = new PlayerObject(N/2 - 35, 485, new VehicleType());
+        String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
+        player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
+//        System.out.println(player.getImageName());
         handler = new SmartVehicleHandler(player, myBuffer, -200);
         player.setSpeed(20);
         updateTimer.start();

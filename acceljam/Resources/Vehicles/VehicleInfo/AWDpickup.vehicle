@@ -1,0 +1,8 @@
+width 47
+height 95
+acceleration 2
+minSpeed 50
+topSpeed 90
+topHandlingSpeed 4
+minHandlingSpeed 0
+imagePath AWDpickup.png

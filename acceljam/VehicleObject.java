@@ -16,6 +16,7 @@ public class VehicleObject extends RelativeObject{
    public VehicleObject(int startX, int startY, VehicleType startData){
       super(startX, startY, startData.getWidth(), startData.getHeight(), startData.getImagePath());
       data = startData;
+      setImageName(data.getImagePath());
    }
    
 

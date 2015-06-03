@@ -1,0 +1,8 @@
+width 35
+height 100
+acceleration 2
+minSpeed 45
+topSpeed 110
+topHandlingSpeed 7
+minHandlingSpeed 5
+imagePath flatbed.png

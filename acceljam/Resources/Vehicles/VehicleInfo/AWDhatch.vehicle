@@ -1,0 +1,8 @@
+width 40
+height 90
+acceleration 4
+minSpeed 45
+topSpeed 100
+topHandlingSpeed 5
+minHandlingSpeed 3
+imagePath AWDhatch.png

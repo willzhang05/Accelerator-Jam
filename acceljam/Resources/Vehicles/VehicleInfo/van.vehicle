@@ -1,0 +1,8 @@
+width 30
+height 65
+acceleration 3
+minSpeed 30
+topSpeed 70
+topHandlingSpeed 3
+minHandlingSpeed 1
+imagePath van.png

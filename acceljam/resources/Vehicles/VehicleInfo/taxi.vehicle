@@ -5,4 +5,4 @@ minSpeed 20
 topSpeed 80
 topHandlingSpeed 5
 minHandlingSpeed 3
-imagePath Taxi
+imagePath taxi.png

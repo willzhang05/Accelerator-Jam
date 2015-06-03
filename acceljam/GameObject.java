@@ -6,18 +6,18 @@ import java.awt.Graphics;
 public abstract class GameObject{
 
    private int speed = 0;
-   private String imageName;
+   private String imageName = "acceljam\\Resources\\";
    private int x;
    private int y;
    private int width;
    private int height;
 
-   public GameObject(int startX, int startY, int startWidth, int startHeight, String image){     //Constructor
+   public GameObject(int startX, int startY, int startWidth, int startHeight, String startImage){     //Constructor
       x = startX;
       y = startY;
       width = startWidth;
       height = startHeight;
-      imageName = image;
+      imageName += startImage;
    }
 
    public abstract void draw(Graphics myBuffer);
