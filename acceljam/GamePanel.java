@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-public class GamePanel extends JPanel{
+public class GamePanel extends SmartPanel{
     public BufferedImage myImage;
     public Graphics myBuffer;
     private Timer updateTimer;
@@ -22,7 +22,8 @@ public class GamePanel extends JPanel{
     private String vehicleChoices = "AWDhatch, AWDluxury, AWDpickup,\nboxvan, "
                                    +"coupe, flatbed,\npickup, taxi, van";
 
-    public GamePanel(int startFrameRate){               //Constructor
+    public GamePanel(JFrame frame, int startFrameRate){               //Constructor
+        super(frame);
         frameRate = startFrameRate;
         myImage = new BufferedImage(N, N, BufferedImage.TYPE_INT_RGB);
         myBuffer = myImage.getGraphics();
@@ -84,6 +85,7 @@ public class GamePanel extends JPanel{
                if (event.getKeyCode() == 37){
                   if(player.getDirection() == player.LEFT){
                      tempDir = player.NO_DIR;
+                     changeFrame(new GameOverPanel(getFrame()));
                   }
                }
                else if (event.getKeyCode() == 39){

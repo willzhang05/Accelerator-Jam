@@ -1,3 +1,5 @@
+package acceljam;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -15,8 +17,11 @@ public class SmartPanel extends JPanel{
       frame.revalidate();
    }
 
+   public JFrame getFrame(){
+      return frame;
+   }
 
-
-
-
+   public void setFrame(JFrame newFrame){
+      frame = newFrame;
+   }
 }

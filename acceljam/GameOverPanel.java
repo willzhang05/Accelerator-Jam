@@ -17,7 +17,9 @@ public class GameOverPanel extends SmartPanel{
     private String backgroundPath = "Resources\\Crashes\\";
 //    private String text = "GG Well Played";
     
-    public GameOverPanel(){
+    public GameOverPanel(JFrame frame){
+        super(frame);
+
         chooseBackground();
         setFocusable(true);
         //USE GEOMETRY MANAGER, NOT SET LOCATION
@@ -42,15 +44,5 @@ public class GameOverPanel extends SmartPanel{
         Random random = new Random();
         String choice = backgroundOptions[random.nextInt(backgroundOptions.length)];
         backgroundPath += choice;
-    }
-
-
-    public static void main(String[] args){
-        JFrame frame = new JFrame("Accelerator Jam");
-        frame.setSize(800, 600);
-        frame.setLocation(100, 50);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setContentPane(new GameOverPanel());
-        frame.setVisible(true);
     }
 }

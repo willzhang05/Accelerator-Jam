@@ -12,4 +12,4 @@ for f in files:
     except IndexError:
         continue
 print "--------"
-time.sleep(10);
+time.sleep(7);
