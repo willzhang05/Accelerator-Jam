@@ -5,31 +5,35 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class mainMenu extends main{
+public class mainMenu extends JFrame {
     public mainMenu(){
-        super();
-        //super.setTitle("Main Menu");
-        //super.add(startButton());
-        //super.add(quitButton());
-    }
-    public JButton startButton(){
-        JButton sB = new JButton("Start");
-        sB.addActionListener(new ActionListener(){
+        initUI();
+	}
+	private void initUI() {
+        setTitle("Accelerator Jam");
+        setSize(800, 600);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+		add(quitButton("Quit"));
+	}
+	public JButton quitButton(String text){
+		JButton qB = new JButton(text);	
+		qB.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent event){
+				System.exit(0);
+			}
+		});
+		return qB;
+	}
+	public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+        
             @Override
-            public void actionPerformed(ActionEvent event){
-                System.exit(0);
-            }
-        });
-        return sB;
-    }
-    public JButton quitButton(){
-        JButton qB = new JButton("Quit");
-        qB.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent event){
-                System.exit(0);
-            }
-        });
-        return qB;
-    }
+            public void run() {
+                mainMenu ex = new mainMenu();
+                ex.setVisible(true);
+			}
+		});
+	}
 }

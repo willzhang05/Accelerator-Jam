@@ -1,3 +1,5 @@
+package acceljam;
+
 import javax.swing.*;
 import java.awt.Graphics;
 
@@ -62,16 +64,5 @@ public class PlayerObject extends VehicleObject{
    public int getMinHandlingSpeed(){
       return minHandlingSpeed;
    }
-
-
-
-
-
-
-
-
-
-
-
 
 }

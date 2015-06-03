@@ -1,3 +1,5 @@
+package acceljam;
+
 import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.*;
@@ -44,7 +46,7 @@ public class GameOverPanel extends JPanel{
 
 
     public static void main(String[] args){
-        JFrame frame = new JFrame("Lab00");
+        JFrame frame = new JFrame("Accelerator Jam");
         frame.setSize(800, 600);
         frame.setLocation(100, 50);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

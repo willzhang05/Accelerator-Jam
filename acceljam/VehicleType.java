@@ -1,3 +1,5 @@
+package acceljam;
+
 import java.util.Scanner;
 import java.io.*;
 
@@ -10,7 +12,7 @@ public class VehicleType{
    private int topSpeed = 70;
    private int topHandlingSpeed = 3;
    private int minHandlingSpeed = 1;
-   private String imagePath = "Resources\\Vehicles\\blank.png";
+   private String imagePath = "Resources\\Vehicles\\2dr_coupe1.jpg";
    private String name;
 
    public VehicleType(String startName){

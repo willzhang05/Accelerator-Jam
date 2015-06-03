@@ -1,3 +1,5 @@
+package acceljam;
+
 import javax.swing.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
