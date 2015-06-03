@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-public class GamePanel extends SmartPanel{
+public class GamePanel extends JPanel{
     public BufferedImage myImage;
     public Graphics myBuffer;
     private Timer updateTimer;
@@ -32,10 +32,11 @@ public class GamePanel extends SmartPanel{
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
         background = new MapObject(N, roadType+".png");
+        System.out.println(background.getImageName());
 
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
-//        System.out.println(player.getImageName());
+
         handler = new SmartVehicleHandler(player, myBuffer, -200);
         player.setSpeed(20);
         updateTimer.start();
