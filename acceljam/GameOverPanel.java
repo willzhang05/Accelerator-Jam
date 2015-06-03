@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.util.Random;
 
-public class GameOverPanel extends JPanel{
+public class GameOverPanel extends SmartPanel{
     public final int N = 600;
     private String[] backgroundOptions = {"crash1.png", "crash2.png", "crash3.png",
                                           "crash4.png", "crash5.png", "crash6.png",
