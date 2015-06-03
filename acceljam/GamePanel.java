@@ -31,7 +31,7 @@ public class GamePanel extends SmartPanel{
         setFocusable(true);
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
-        background = new MapObject(N, "resources/Maps/"+roadType+".png");
+        background = new MapObject(N, roadType+".png");
 
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
