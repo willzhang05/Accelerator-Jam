@@ -5,35 +5,60 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class mainMenu extends JFrame {
-    public mainMenu(){
-        initUI();
-	}
-	private void initUI() {
+public class MainMenu extends JFrame {
+    private JLabel label1, label2;
+    private JTextField box;
+    private JPanel panel;
+    public MainMenu() throws Exception {
         setTitle("Accelerator Jam");
         setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-		add(quitButton("Quit"));
-	}
-	public JButton quitButton(String text){
-		JButton qB = new JButton(text);	
-		qB.addActionListener(new ActionListener(){
-			@Override
-			public void actionPerformed(ActionEvent event){
-				System.exit(0);
-			}
-		});
-		return qB;
-	}
-	public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
+        add(quitButton("Quit"));
         
-            @Override
-            public void run() {
-                mainMenu ex = new mainMenu();
-                ex.setVisible(true);
-			}
-		});
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        
+        Roboto font = new Roboto(PLAIN, 16);
+        Roboto largeFont = new Roboto(BOLD, 144);
+        
+        label1 = new JLabel("Accelerator Jam");
+        label1.setFont(largeFont);
+        label1.setForeground(Color.decode("#1E88E5"));
+        label1.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(label1);
+        
+        panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+        panel.setFont(font);
+        panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        add(panel);
+        
+        menuButton button1 = new menuButton("Start", Roboto, Listener1);
+        panel.add(button1);
+        
+        menuButton button2 = new menuButton("Quit", Roboto, Listener2);
+        panel.add(button2);
+    }
+    private class Listener1 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            EventQueue.invokeLater(new Runnable() {
+                
+                @Override
+                public void run() {
+                    GameDriver gD = new GameDriver();
+                }
+            });
+        }
+    }
+    private class Listener2 implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            System.exit(0);
+        }
+    }
+	public class menuButton(String text, Font font, ActionListener listener)
+        extends JButton {
+		JButton mB = new JButton(text);
+        setFont(font);
+		mB.addActionListener(listener);
 	}
 }
