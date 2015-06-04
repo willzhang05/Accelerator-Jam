@@ -20,6 +20,8 @@ public class GamePanel extends SmartPanel {
     private Sound backgroundMusic;
     private int score = 0;
     private PlayerObject player;
+    private String[] applicable = {"coupe", "hatch", "luxury", "taxi", "pickup1", 
+                                   "pickup2", "van", "boxvan", "flatbed"};
     private String vehicleChoices = "coupe, hatch, luxury, taxi, pickup1, pickup2, "
                                    +"van, boxvan, flatbed";
 
@@ -36,7 +38,16 @@ public class GamePanel extends SmartPanel {
         background = new MapObject(N, roadType+".png");
         backgroundMusic = new Sound(roadType+".wav");
 
-        String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
+        String vehicleToUse = "ll";
+	     boolean myBool = true;
+        while(myBool){
+    	      vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
+	         for(String i: applicable){
+	             if(i.equals(vehicleToUse)){
+                    myBool = false;
+     		       }
+	         }
+	     }
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
 
         handler = new SmartVehicleHandler(player, myBuffer, -1000);
