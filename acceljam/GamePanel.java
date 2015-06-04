@@ -1,5 +1,4 @@
 package acceljam;
-
 import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.*;
@@ -8,7 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
-public class GamePanel extends SmartPanel{
+public class GamePanel extends SmartPanel {
     public BufferedImage myImage;
     public Graphics myBuffer;
     private Timer updateTimer;
@@ -19,8 +18,8 @@ public class GamePanel extends SmartPanel{
     public SmartVehicleHandler handler;
     private MapObject background;
     private PlayerObject player;
-    private String vehicleChoices = "AWDhatch, AWDluxury, AWDpickup,\nboxvan, "
-                                   +"coupe, flatbed,\npickup, taxi, van";
+    private String vehicleChoices = "coupe, hatch, luxury, taxi, pickup1, pickup2, "
+                                   +"van, boxvan, flatbed";
 
     public GamePanel(JFrame frame, int startFrameRate){               //Constructor
         super(frame);
@@ -45,14 +44,12 @@ public class GamePanel extends SmartPanel{
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
         frameNumber += 1;
     }
-
-    private class Listener implements ActionListener{   //Timer
+    private class Listener implements ActionListener {   //Timer
         public void actionPerformed(ActionEvent e){
            update();
            repaint();
         }
     }
-
     public void update(){                               //Update game
         myBuffer.clearRect(0,0, N, N);
         background.draw(myBuffer);
@@ -61,7 +58,6 @@ public class GamePanel extends SmartPanel{
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
     }
-
     private class MovementKeyListener extends KeyAdapter{
         public void keyPressed(KeyEvent event){
             int tempDir = player.getDirection();
