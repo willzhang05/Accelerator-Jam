@@ -33,7 +33,5 @@ public class frame extends JFrame {
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		ImageIcon img = new ImageIcon("../icon.ico"); //Custom icon
 		setIconImage(img.getImage());
-		font = new Roboto(0, 16); //0 == PLAIN
-		largeFont = new Roboto(1, 72); //1 == BOLD
     }
 }

@@ -8,7 +8,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainMenu extends SmartPanel {
+public class mainMenu extends SmartPanel {
 	private JPanel panel;
 	private JLabel label1;
 	private class menuButton extends JButton {
@@ -28,8 +28,8 @@ public class MainMenu extends SmartPanel {
             System.exit(0);
         }
     }
-    public MainMenu(){
-		super(getFrame());
+    public mainMenu(JFrame frame){
+		super(frame);
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		panel.setFont(font);
