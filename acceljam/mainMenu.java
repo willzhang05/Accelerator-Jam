@@ -52,9 +52,9 @@ public class MainMenu extends JFrame {
         panel.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(panel);
         
-        menuButton button1 = new menuButton("Start", font, Listener1);
+        menuButton button1 = new menuButton("Start", font, new Listener1());
         panel.add(button1);
-        menuButton button2 = new menuButton("Quit", font, Listener2);
+        menuButton button2 = new menuButton("Quit", font, new Listener2());
         panel.add(button2);
     }
 }
