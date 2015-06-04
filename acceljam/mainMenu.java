@@ -29,11 +29,26 @@ public class MainMenu extends JFrame {
         }
     }
     public MainMenu() throws Exception {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} 
+		catch (UnsupportedLookAndFeelException e){
+		   e.printStackTrace();
+		}
+		catch (ClassNotFoundException e){
+		   e.printStackTrace();
+		}
+		catch (InstantiationException e){
+		   e.printStackTrace();
+		}
+		catch (IllegalAccessException e){
+		   e.printStackTrace();
+		}
 		setTitle("Accelerator Jam");
 		setSize(800, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		ImageIcon img = new ImageIcon("../icon.ico");
 		setIconImage(img.getImage());
         Roboto font = new Roboto(0, 16); //0 == PLAIN

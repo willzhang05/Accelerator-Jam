@@ -7,14 +7,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class main throws Exception {
-    public static void main(String[] args){
-        EventQueue.invokeLater(new Runnable(){
-            @Override
-            public void run(){
-                MainMenu ex = new MainMenu();
-                ex.setVisible(true);
-			}
-		});
+public class main {
+    public static void main(String[] args) throws Exception {
+		MainMenu ex = new MainMenu();
+		ex.setVisible(true);
 	}
 }

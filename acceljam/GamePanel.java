@@ -17,6 +17,7 @@ public class GamePanel extends SmartPanel {
     private int position = 0;
     public SmartVehicleHandler handler;
     private MapObject background;
+    private Sound backgroundMusic;
     private PlayerObject player;
     private String vehicleChoices = "coupe, hatch, luxury, taxi, pickup1, pickup2, "
                                    +"van, boxvan, flatbed";
@@ -32,6 +33,8 @@ public class GamePanel extends SmartPanel {
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
         background = new MapObject(N, roadType+".png");
+        backgroundMusic = new Sound(roadType+".wav");
+        backgroundMusic.loop();
 
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
