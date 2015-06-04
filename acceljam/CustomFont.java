@@ -1,6 +1,8 @@
 //Name: William Zhang
 //Date: 5/21/15
-//Custom Roboto Font
+//Custom Font Support
+package acceljam;
+
 import java.awt.Font;
 import java.awt.GraphicsEnvironment;
 import java.io.File;
