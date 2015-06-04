@@ -75,6 +75,7 @@ public class SmartVehicleHandler{
              addVehicle(firstVehicle);
              vehicles.get(nextVehicleID).setX(median-vehicles.get(nextVehicleID).getWidth()/2);
              vehicles.get(nextVehicleID).setSpeed(15);
+             vehicles.get(nextVehicleID).setY(height);
              nextVehicleID += 1;
              secondVehicle = new SmartVehicleObject(0, height, new VehicleType());
          }
