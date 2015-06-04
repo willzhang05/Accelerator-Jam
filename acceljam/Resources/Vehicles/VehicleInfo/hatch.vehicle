@@ -5,4 +5,4 @@ minSpeed 45
 topSpeed 100
 topHandlingSpeed 5
 minHandlingSpeed 3
-imagePath AWDhatch.png
+imagePath hatch.png
