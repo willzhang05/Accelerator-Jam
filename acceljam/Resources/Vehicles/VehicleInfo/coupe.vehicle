@@ -1,8 +1,8 @@
 width 73
 height 181
-acceleration 6
-minSpeed 10
-topSpeed 90
-topHandlingSpeed 5
-minHandlingSpeed 4
+acceleration 7
+minSpeed 30
+topSpeed 120
+topHandlingSpeed 8
+minHandlingSpeed 5
 imagePath coupe.png

@@ -37,24 +37,26 @@ public class GameOverPanel extends SmartPanel{
     public GameOverPanel(JFrame frame, int score){
         super(frame);
         setFocusable(true);
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+		setBackground(Color.decode("#1E88E5"));
+		
+		label1 = new JLabel("Game Over");
+		label1.setFont(largeFont);
+		label1.setAlignmentX(Component.CENTER_ALIGNMENT);
+		add(label1);
+		
+		label2 = new JLabel("Your Score: " + score);
+		label2.setFont(font);
+		label2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		add(label2);
+		
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		panel.setFont(font);
 		panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.setBackground(Color.decode("#1E88E5"));
 		add(panel);
 		
-		label1 = new JLabel("Game Over");
-		label1.setFont(largeFont);
-		label1.setForeground(Color.decode("#1E88E5"));
-		label1.setAlignmentX(Component.CENTER_ALIGNMENT);
-		panel.add(label1);
-		
-		label2 = new JLabel("Your Score: " + score);
-		label2.setFont(font);
-		label2.setForeground(Color.decode("#1E88E5"));
-		label2.setAlignmentX(Component.CENTER_ALIGNMENT);
-		panel.add(label2);
-     
 		menuButton button1 = new menuButton("Restart", font, new Listener1());
 		panel.add(button1);
 		menuButton button2 = new menuButton("Back", font, new Listener2());

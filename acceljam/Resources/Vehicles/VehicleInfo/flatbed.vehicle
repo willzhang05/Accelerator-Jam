@@ -1,8 +1,8 @@
-width 76
-height 236
+width 84
+height 263
 acceleration 2
-minSpeed 45
-topSpeed 110
-topHandlingSpeed 7
-minHandlingSpeed 5
+minSpeed 20
+topSpeed 105
+topHandlingSpeed 2
+minHandlingSpeed 2
 imagePath flatbed.png

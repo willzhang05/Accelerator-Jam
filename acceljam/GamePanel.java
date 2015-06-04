@@ -59,16 +59,17 @@ public class GamePanel extends SmartPanel {
         background.draw(myBuffer);
         background.moveRelativeTo(player);
         handler.update();
-        if(frameNumber%100 == 0){
+        if(frameNumber % 100 == 0){
             if(player.getSpeed()<=player.getData().getTopSpeed()){
                player.setSpeed(player.getSpeed()+player.getData().getAcceleration());
             }
         }
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
-        myBuffer.setColor(Color.BLACK);
-        score+=player.getSpeed()/10;
-        myBuffer.drawString(""+score, 30, 300);
+        myBuffer.setColor(Color.decode("#D81B60"));
+		myBuffer.setFont(font);
+        score += player.getSpeed()/10;
+        myBuffer.drawString("Score: " + score, 30, 300);
         checkGameOver();
     }
     public void checkGameOver(){

@@ -1,8 +1,8 @@
-width 128
-height 310
+width 86
+height 207
 acceleration 2
-minSpeed 0
-topSpeed 50
+minSpeed 20
+topSpeed 100
 topHandlingSpeed 2
 minHandlingSpeed 2
 imagePath boxvan.png

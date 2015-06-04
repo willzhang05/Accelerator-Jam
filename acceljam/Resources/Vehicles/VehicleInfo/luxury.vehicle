@@ -1,8 +1,8 @@
 width 75
-height 171
-acceleration 4
-minSpeed 45
-topSpeed 100
+height 190
+acceleration 3
+minSpeed 25
+topSpeed 110
 topHandlingSpeed 6
 minHandlingSpeed 5
 imagePath luxury.png
