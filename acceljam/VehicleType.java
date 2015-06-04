@@ -1,6 +1,7 @@
 package acceljam;
 
 import java.util.Scanner;
+import java.util.Random;
 import java.io.*;
 
 public class VehicleType{
@@ -14,6 +15,9 @@ public class VehicleType{
    private int minHandlingSpeed = 1;
    private String imagePath = "acceljam\\Resources\\Vehicles\\";
    private String name;
+   private String[] vehicleOptions = {"boxvan", "coupe", "flatbed", "hatch", 
+                                      "luxury", "pickup1", "pickup2", "taxi",
+                                      "van"};
 
    public VehicleType(String startName){
       name = startName;
@@ -21,7 +25,8 @@ public class VehicleType{
    }
 
    public VehicleType(){
-      name = "taxi";
+      Random random = new Random(); 
+      name = vehicleOptions[random.nextInt(vehicleOptions.length)];
       readData();
    }
 
