@@ -9,7 +9,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class frame extends JFrame {
-	public Roboto font, largeFont;
     public frame() throws Exception {
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -33,7 +32,5 @@ public class frame extends JFrame {
 		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 		ImageIcon img = new ImageIcon("../icon.ico"); //Custom icon
 		setIconImage(img.getImage());
-		font = new Roboto(0, 16); //0 == PLAIN
-		largeFont = new Roboto(1, 72); //1 == BOLD
     }
 }
