@@ -17,5 +17,7 @@ public class GameOverPanel extends SmartPanel{
         setFocusable(true);
     }
 
-    public void paintComponent(Graphics pen){}
+    public void paintComponent(Graphics pen){
+      pen.clearRect(0, 0, getWidth(), getHeight());
+    }
  }

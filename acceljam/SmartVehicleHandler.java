@@ -29,13 +29,13 @@ public class SmartVehicleHandler{
          vehicle.draw(myBuffer);
       }
    }
-
+/*
    public void createVehicle(Lane lane, VehicleType vehicleType){                               //
       vehicles.add(new SmartVehicleObject(laneWidth*(lane-1)+10, height, vehicleType));
       vehicles.get(nextVehicleID).setSpeed(10);
       nextVehicleID += 1;
    }
-
+*/
    public SmartVehicleObject[] getVehicles(){
       SmartVehicleObject[] returnList = {};
       returnList = vehicles.toArray(returnList);
@@ -68,8 +68,8 @@ public class SmartVehicleHandler{
 
    private class Lane{
       private int median;
-      private SmartVehicle firstVehicle;
-      private SmartVehicle secondVehicle;
+      private SmartVehicleObject firstVehicle;
+      private SmartVehicleObject secondVehicle;
 
       public Lane(int startMedian){
          median = startMedian;
@@ -79,19 +79,19 @@ public class SmartVehicleHandler{
          
       }
 
-      public SmartVehicle getSecondVehicle(){
+      public SmartVehicleObject getSecondVehicle(){
          return secondVehicle;
       }
 
-      public void setSecondVehicle(SmartVehicle newSecondVehicle){
+      public void setSecondVehicle(SmartVehicleObject newSecondVehicle){
          secondVehicle = newSecondVehicle;
       }
 
-      public SmartVehicle getFirstVehicle(){
+      public SmartVehicleObject getFirstVehicle(){
          return firstVehicle;
       }
 
-      public void setFirstVehicle(SmartVehicle newFirstVehicle){
+      public void setFirstVehicle(SmartVehicleObject newFirstVehicle){
          firstVehicle = newFirstVehicle;
       }
    }

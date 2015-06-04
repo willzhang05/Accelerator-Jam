@@ -33,7 +33,6 @@ public class GamePanel extends SmartPanel{
 
         String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
         background = new MapObject(N, roadType+".png");
-        System.out.println(background.getImageName());
 
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
@@ -58,46 +57,41 @@ public class GamePanel extends SmartPanel{
         myBuffer.clearRect(0,0, N, N);
         background.draw(myBuffer);
         background.moveRelativeTo(player);
-        handler.update();
+//        handler.update();
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
     }
 
     private class MovementKeyListener extends KeyAdapter{
         public void keyPressed(KeyEvent event){
-            int tempDir = 0;
-            if (event.getKeyCode() == 37 || event.getKeyCode() == 39){
-               if (event.getKeyCode() == 37){               //Left
-                  tempDir = player.LEFT;
-               }
-               else if (event.getKeyCode() == 39){         //Right
-                  tempDir = player.RIGHT;
-               }
-               if(tempDir != player.getDirection()){
-                  player.setHandlingSpeed(player.getMinHandlingSpeed());
-               }
-               player.setDirection(tempDir);
-           }
+            int tempDir = player.getDirection();
+            if (event.getKeyCode() == 37){               //Left
+               tempDir = player.LEFT;
+            }
+            if (event.getKeyCode() == 39){         //Right
+               tempDir = player.RIGHT;
+            }
+            if(tempDir != player.getDirection()){
+               player.setHandlingSpeed(player.getMinHandlingSpeed());
+            }
+            player.setDirection(tempDir);
         }
         public void keyReleased(KeyEvent event){
-            if (event.getKeyCode() == 37 || event.getKeyCode() == 39){
-               int tempDir = 0;
-               if (event.getKeyCode() == 37){
-                  if(player.getDirection() == player.LEFT){
-                     tempDir = player.NO_DIR;
-                     changeFrame(new GameOverPanel(getFrame()));
-                  }
-               }
-               else if (event.getKeyCode() == 39){
-                  if(player.getDirection() == player.RIGHT){
-                     tempDir = player.NO_DIR;
-                  }
-               }
-               if(tempDir != player.getDirection()){
-                  player.setHandlingSpeed(player.getMinHandlingSpeed());
-               }
-               player.setDirection(tempDir);
+            int tempDir = player.getDirection();
+            if (event.getKeyCode() == 37){
+                if(player.getDirection() == player.LEFT){
+                    tempDir = player.NO_DIR;
+                }
             }
+            if (event.getKeyCode() == 39){
+                if(player.getDirection() == player.RIGHT){
+                    tempDir = player.NO_DIR;
+                }
+            }
+            if(tempDir != player.getDirection()){
+                player.setHandlingSpeed(player.getMinHandlingSpeed());
+            }
+            player.setDirection(tempDir);
         }
     }
 }
