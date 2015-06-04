@@ -1,8 +1,8 @@
-width 146
-height 363
+width 73
+height 181
 acceleration 6
 minSpeed 10
 topSpeed 90
-topHandlingSpeed 4
+topHandlingSpeed 5
 minHandlingSpeed 4
 imagePath coupe.png

@@ -1,8 +1,8 @@
-width 40
-height 90
+width 75
+height 171
 acceleration 4
 minSpeed 45
 topSpeed 100
 topHandlingSpeed 6
 minHandlingSpeed 5
-imagePath AWDluxury.png
+imagePath luxury.png
