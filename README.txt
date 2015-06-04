@@ -1,0 +1,1 @@
+Run the main class within the folder acceljam. The JAR file does not have registered classpaths.
