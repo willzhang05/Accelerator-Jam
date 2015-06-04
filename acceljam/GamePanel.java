@@ -61,7 +61,14 @@ public class GamePanel extends SmartPanel {
         handler.update();
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
+        checkGameOver();
     }
+    
+    public void checkGameOver(){
+        if (player.checkDeath(handler))
+           changePanel(new GameOverPanel(getFrame(), score));
+    }
+    
     private class MovementKeyListener extends KeyAdapter{
         public void keyPressed(KeyEvent event){
             int tempDir = player.getDirection();
