@@ -5,8 +5,8 @@ import java.awt.*;
 public class SmartPanel extends JPanel {
    private JFrame frame;
 
-   public Roboto font = new Roboto(0, 16); //0 == PLAIN
-	public Roboto largeFont = new Roboto(1, 72); //1 == BOLD
+   public Roboto font = new Roboto(0, 18); //0 == PLAIN
+	public Roboto largeFont = new Roboto(1, 80); //1 == BOLD
  
    public SmartPanel(JFrame startFrame){
       super();
