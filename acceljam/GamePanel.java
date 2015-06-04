@@ -31,7 +31,8 @@ public class GamePanel extends SmartPanel {
         addKeyListener(new MovementKeyListener());
         setFocusable(true);
 
-        String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
+//        String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
+        String roadType = "autobahn";
         background = new MapObject(N, roadType+".png");
         backgroundMusic = new Sound(roadType+".wav");
 
@@ -39,7 +40,7 @@ public class GamePanel extends SmartPanel {
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
 
         handler = new SmartVehicleHandler(player, myBuffer, -200);
-        player.setSpeed(20);
+        player.setSpeed(player.getData().getMinSpeed());
         updateTimer.start();
         backgroundMusic.loop();
     }
@@ -57,7 +58,7 @@ public class GamePanel extends SmartPanel {
         myBuffer.clearRect(0,0, N, N);
         background.draw(myBuffer);
         background.moveRelativeTo(player);
-//        handler.update();
+        handler.update();
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
     }

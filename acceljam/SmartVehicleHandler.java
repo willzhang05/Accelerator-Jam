@@ -3,6 +3,7 @@ package acceljam;
 import javax.swing.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class SmartVehicleHandler{
 
@@ -16,6 +17,7 @@ public class SmartVehicleHandler{
    private Graphics myBuffer;
    public PlayerObject player;
    private String[] vehicleTypes = {};
+   private Random random = new Random();
 
    public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){//Constructor
       height = startHeight;
@@ -27,15 +29,19 @@ public class SmartVehicleHandler{
          vehicle.moveRelativeTo(player);
          vehicle.draw(myBuffer);
       }
+      generateVehicles();
    }
 
-/*
-   public void createVehicle(Lane lane, VehicleType vehicleType){                               //
-      vehicles.add(new SmartVehicleObject(laneWidth*(lane-1)+10, height, vehicleType));
-      vehicles.get(nextVehicleID).setSpeed(10);
-      nextVehicleID += 1;
+   public void generateVehicles(){
+      if(random.nextInt(100)>98)
+         laneOne.putVehicle();
+      if(random.nextInt(100)>98)
+         laneTwo.putVehicle();
+      if(random.nextInt(100)>98)
+         laneThree.putVehicle();
+      if(random.nextInt(100)>98)
+         laneFour.putVehicle();
    }
-*/
 
    public SmartVehicleObject[] getVehicles(){
       SmartVehicleObject[] returnList = {};
@@ -54,29 +60,23 @@ public class SmartVehicleHandler{
       height = newHeight;
    }
 
-
-
-
-
-
-
-
    private class Lane{
       private int median;
-      private SmartVehicleObject firstVehicle;
-      private SmartVehicleObject secondVehicle;
+      private SmartVehicleObject firstVehicle = new SmartVehicleObject(0, 99999, new VehicleType());
+      private SmartVehicleObject secondVehicle = new SmartVehicleObject(0, height, new VehicleType());
 
       public Lane(int startMedian){
          median = startMedian;
       }
 
       public void putVehicle(){
-         if (firstVehicle.getX()+firstVehicle.getHeight()>secondVehicle.getX()){
+         if (firstVehicle.getY()>height+secondVehicle.getHeight()){
              firstVehicle = secondVehicle;
              addVehicle(firstVehicle);
              vehicles.get(nextVehicleID).setX(median-vehicles.get(nextVehicleID).getWidth()/2);
-             vehicles.get(nextVehicleID).setSpeed(10);
+             vehicles.get(nextVehicleID).setSpeed(15);
              nextVehicleID += 1;
+             secondVehicle = new SmartVehicleObject(0, height, new VehicleType());
          }
       }
 
