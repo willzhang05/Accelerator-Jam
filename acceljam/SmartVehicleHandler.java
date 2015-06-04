@@ -66,26 +66,36 @@ public class SmartVehicleHandler{
       rightBound = newRightBound;
    }
 
-   public int getLanes(){
-      return lanes;
-   }
-
-   public void set(int newLanes){
-      lanes = newLanes;
-   }
-
-
    private class Lane{
       private int median;
       private SmartVehicle firstVehicle;
       private SmartVehicle secondVehicle;
 
       public Lane(int startMedian){
-          median = startMedian;
+         median = startMedian;
       }
 
+      public void putVehicle(){
+         
+      }
 
+      public SmartVehicle getSecondVehicle(){
+         return secondVehicle;
+      }
 
+      public void setSecondVehicle(SmartVehicle newSecondVehicle){
+         secondVehicle = newSecondVehicle;
+      }
 
+      public SmartVehicle getFirstVehicle(){
+         return firstVehicle;
+      }
+
+      public void setFirstVehicle(SmartVehicle newFirstVehicle){
+         firstVehicle = newFirstVehicle;
+      }
    }
 }
+
+
+
