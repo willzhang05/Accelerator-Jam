@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 
 public class mainMenu extends SmartPanel {
 	private JPanel panel;
-	private JLabel label1;
+	private JLabel label1, label2;
 	private class menuButton extends JButton {
 		public menuButton(String text, Font font, ActionListener listener){
 			setText(text);
@@ -49,5 +49,11 @@ public class mainMenu extends SmartPanel {
 		panel.add(button1);
 		menuButton button2 = new menuButton("Quit", font, new Listener2());
 		panel.add(button2);
+		
+		label2 = new JLabel("By Antioch Sanders and William Zhang");
+		label2.setFont(font);
+		label2.setForeground(Color.decode("#EEEEEE"));
+		label2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		add(label2);
     }
 }
