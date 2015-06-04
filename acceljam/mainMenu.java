@@ -30,21 +30,18 @@ public class mainMenu extends SmartPanel {
     }
     public mainMenu(JFrame frame){
 		super(frame);
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBackground(Color.decode("#D81B60"));
-		label1 = new JLabel("Accelerator Jam");
-		label1.setFont(largeFont);
-		label1.setForeground(Color.decode("#1E88E5"));
-		label1.setAlignmentX(Component.CENTER_ALIGNMENT);
-		add(label1);
-		
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		panel.setFont(font);
 		panel.setAlignmentX(Component.CENTER_ALIGNMENT);
-		panel.setBackground(Color.decode("#D81B60"));
 		add(panel);
 		
+		label1 = new JLabel("Accelerator Jam");
+		label1.setFont(largeFont);
+		label1.setForeground(Color.decode("#1E88E5"));
+		label1.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(label1);
+     
 		menuButton button1 = new menuButton("Start", font, new Listener1());
 		panel.add(button1);
 		menuButton button2 = new menuButton("Quit", font, new Listener2());
