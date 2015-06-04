@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class MainMenu extends SmartPanel {
-   private JPanel panel;
+	private JPanel panel;
 	private JLabel label1;
 	private class menuButton extends JButton {
 		public menuButton(String text, Font font, ActionListener listener){
