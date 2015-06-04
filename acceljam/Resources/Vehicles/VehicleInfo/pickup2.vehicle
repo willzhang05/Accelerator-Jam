@@ -5,4 +5,4 @@ minSpeed 50
 topSpeed 90
 topHandlingSpeed 4
 minHandlingSpeed 0
-imagePath AWDpickup.png
+imagePath pickup.png
