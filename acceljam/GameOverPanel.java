@@ -21,12 +21,12 @@ public class GameOverPanel extends SmartPanel{
 	}
 	private class Listener1 implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            changePanel(new GamePanel(getFrame()));
+            changePanel(new GamePanel(getFrame(), 30));
         }
     }
     private class Listener2 implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            changePanel(new MainMenu(getFrame()));
+            changePanel(new mainMenu(getFrame()));
         }
     }
 	private class Listener3 implements ActionListener {
