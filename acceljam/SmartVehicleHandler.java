@@ -9,10 +9,13 @@ public class SmartVehicleHandler{
    private int height;
    private int leftBound = 97;
    private int rightBound = 503;
-   private int lanes = 4;
+   private Lane laneOne;
+   private Lane laneTwo;
+   private Lane laneThree;
+   private Lane laneFour;
    private ArrayList<SmartVehicleObject> vehicles = new ArrayList<SmartVehicleObject>();
    private int nextVehicleID = 0;
-   private int laneWidth = leftBound + (rightBound-leftBound)/lanes;
+//   private int laneWidth = leftBound + (rightBound-leftBound)/lanes;
    private Graphics myBuffer;
    public PlayerObject player;
 
@@ -21,6 +24,7 @@ public class SmartVehicleHandler{
       height = startHeight;
       myBuffer = startBuffer;
       player = startPlayer;
+      
    }
 
    public void update(){                                                                       //move and draw vehicles
