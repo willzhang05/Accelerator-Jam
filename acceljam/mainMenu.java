@@ -29,10 +29,7 @@ public class MainMenu extends SmartPanel {
         }
     }
     public MainMenu(){
-		super(new frame());
-		Roboto font = new Roboto(0, 16); //0 == PLAIN
-		Roboto largeFont = new Roboto(1, 72); //1 == BOLD
-		
+		super(getFrame());
 		panel = new JPanel();
 		panel.setLayout(new FlowLayout());
 		panel.setFont(font);

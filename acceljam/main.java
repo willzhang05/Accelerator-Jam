@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 
 public class main {
     public static void main(String[] args) throws Exception {
-		m game = new frame();
+		frame game = new frame();
 		game.setContentPane(new MainMenu(game));
 		game.setVisible(true);
 	}
