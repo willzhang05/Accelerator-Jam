@@ -8,9 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MainMenu extends JFrame {
-    private JLabel label1;
-    private JPanel panel;
+public class MainMenu extends SmartPanel {
+   private JPanel panel;
+	private JLabel label1;
 	private class menuButton extends JButton {
 		public menuButton(String text, Font font, ActionListener listener){
 			setText(text);
@@ -20,7 +20,7 @@ public class MainMenu extends JFrame {
 	}
 	private class Listener1 implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            //Go to car selector
+            changePanel(new CarSelectorPanel(getFrame()));
         }
     }
     private class Listener2 implements ActionListener {
@@ -28,47 +28,23 @@ public class MainMenu extends JFrame {
             System.exit(0);
         }
     }
-    public MainMenu() throws Exception {
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} 
-		catch (UnsupportedLookAndFeelException e){
-		   e.printStackTrace();
-		}
-		catch (ClassNotFoundException e){
-		   e.printStackTrace();
-		}
-		catch (InstantiationException e){
-		   e.printStackTrace();
-		}
-		catch (IllegalAccessException e){
-		   e.printStackTrace();
-		}
-		setTitle("Accelerator Jam");
-		setSize(800, 600);
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-		getContentPane().setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-		ImageIcon img = new ImageIcon("../icon.ico");
-		setIconImage(img.getImage());
-        Roboto font = new Roboto(0, 16); //0 == PLAIN
-        Roboto largeFont = new Roboto(1, 144); //1 == BOLD
-
-        label1 = new JLabel("Accelerator Jam");
-        label1.setFont(largeFont);
-        label1.setForeground(Color.decode("#1E88E5"));
-        label1.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(label1);
-
-        panel = new JPanel();
-        panel.setLayout(new FlowLayout());
-        panel.setFont(font);
-        panel.setAlignmentX(Component.CENTER_ALIGNMENT);
-        add(panel);
-        
-        menuButton button1 = new menuButton("Start", font, new Listener1());
-        panel.add(button1);
-        menuButton button2 = new menuButton("Quit", font, new Listener2());
-        panel.add(button2);
+    public MainMenu(){
+		super(getFrame());
+		panel = new JPanel();
+		panel.setLayout(new FlowLayout());
+		panel.setFont(font);
+		panel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		add(panel);
+		
+		label1 = new JLabel("Accelerator Jam");
+		label1.setFont(largeFont);
+		label1.setForeground(Color.decode("#1E88E5"));
+		label1.setAlignmentX(Component.CENTER_ALIGNMENT);
+		panel.add(label1);
+     
+		menuButton button1 = new menuButton("Start", font, new Listener1());
+		panel.add(button1);
+		menuButton button2 = new menuButton("Quit", font, new Listener2());
+		panel.add(button2);
     }
 }
