@@ -15,6 +15,7 @@ public class SmartVehicleHandler{
    private int nextVehicleID = 0;
    private Graphics myBuffer;
    public PlayerObject player;
+   private String[] vehicleTypes = {};
 
    public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){//Constructor
       height = startHeight;
@@ -70,11 +71,13 @@ public class SmartVehicleHandler{
       }
 
       public void putVehicle(){
-         addVehicle(new SmartVehicleObject(median, height, new VehicleType()));
-         vehicles.get(nextVehicleID).setX(median-vehicles.get(nextVehicleID).getWidth()/2);
-         vehicles.get(nextVehicleID).setSpeed(10);
-         firstVehicle = vehicles.get(nextVehicleID);
-         nextVehicleID += 1;
+         if (firstVehicle.getX()+firstVehicle.getHeight()>secondVehicle.getX()){
+             firstVehicle = secondVehicle;
+             addVehicle(firstVehicle);
+             vehicles.get(nextVehicleID).setX(median-vehicles.get(nextVehicleID).getWidth()/2);
+             vehicles.get(nextVehicleID).setSpeed(10);
+             nextVehicleID += 1;
+         }
       }
 
       public SmartVehicleObject getSecondVehicle(){
