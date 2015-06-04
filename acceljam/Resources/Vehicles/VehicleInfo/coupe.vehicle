@@ -3,6 +3,6 @@ height 181
 acceleration 7
 minSpeed 30
 topSpeed 120
-topHandlingSpeed 8
-minHandlingSpeed 5
+topHandlingSpeed 30
+minHandlingSpeed 25
 imagePath coupe.png
