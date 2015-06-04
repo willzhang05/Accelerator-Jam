@@ -34,7 +34,6 @@ public class GamePanel extends SmartPanel {
         String roadType = JOptionPane.showInputDialog("Enter road name (Autobahn)");
         background = new MapObject(N, roadType+".png");
         backgroundMusic = new Sound(roadType+".wav");
-        backgroundMusic.loop();
 
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
@@ -42,6 +41,7 @@ public class GamePanel extends SmartPanel {
         handler = new SmartVehicleHandler(player, myBuffer, -200);
         player.setSpeed(20);
         updateTimer.start();
+        backgroundMusic.loop();
     }
     public void paintComponent(Graphics pen){           //Repaint the screen
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
