@@ -2,13 +2,13 @@ package acceljam;
 import javax.swing.*;
 import java.awt.*;
 
-public class SmartPanel extends JPanel {
+public class SmartPanel extends JPanel{
    private JFrame frame;
    public SmartPanel(JFrame startFrame){
       super();
       frame = startFrame;
    }
-   public void changePanel(JPanel newPanel){
+   public void changeFrame(JPanel newPanel){
       frame.setContentPane(newPanel);
       frame.revalidate();
    }

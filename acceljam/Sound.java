@@ -13,7 +13,7 @@ public class Sound{
   
   public Sound(String startFile){
     try{
-      file = this.getClass().getClassLoader().getResource("acceljam\\Resources\\audio\\"+startFile);
+      file = this.getClass().getClassLoader().getResource("acceljam\\Resources\\Sounds\\"+startFile);
       audioIn = AudioSystem.getAudioInputStream(file);
       clip = AudioSystem.getClip();
       clip.open(audioIn);
