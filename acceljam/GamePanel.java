@@ -18,7 +18,7 @@ public class GamePanel extends SmartPanel {
     public SmartVehicleHandler handler;
     private MapObject background;
     private Sound backgroundMusic;
-    private int score = 2342;
+    private int score = 0;
     private PlayerObject player;
     private String vehicleChoices = "coupe, hatch, luxury, taxi, pickup1, pickup2, "
                                    +"van, boxvan, flatbed";
@@ -39,7 +39,7 @@ public class GamePanel extends SmartPanel {
         String vehicleToUse = JOptionPane.showInputDialog("Choose from: " + vehicleChoices);
         player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
 
-        handler = new SmartVehicleHandler(player, myBuffer, -200);
+        handler = new SmartVehicleHandler(player, myBuffer, -1000);
         player.setSpeed(player.getData().getMinSpeed());
         updateTimer.start();
         backgroundMusic.loop();
@@ -59,12 +59,22 @@ public class GamePanel extends SmartPanel {
         background.draw(myBuffer);
         background.moveRelativeTo(player);
         handler.update();
+        if(frameNumber%100 == 0){
+            if(player.getSpeed()<=player.getData().getTopSpeed()){
+               player.setSpeed(player.getSpeed()+player.getData().getAcceleration());
+            }
+        }
         player.moveDirection(frameNumber);
         player.draw(myBuffer);
+        myBuffer.setColor(Color.BLACK);
+        score+=player.getSpeed()/10;
+        myBuffer.drawString(""+score, 30, 300);
         checkGameOver();
     }
     public void checkGameOver(){
         if(player.checkDeath(handler)){
+            updateTimer.stop();
+            backgroundMusic.stop();
             changePanel(new GameOverPanel(getFrame(), score));
         }
     }

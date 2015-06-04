@@ -20,7 +20,7 @@ public class mainMenu extends SmartPanel {
 	}
 	private class Listener1 implements ActionListener {
         public void actionPerformed(ActionEvent e){
-            changePanel(new CarSelectorPanel(getFrame()));
+            changePanel(new GamePanel(getFrame(), 30));
         }
     }
     private class Listener2 implements ActionListener {
