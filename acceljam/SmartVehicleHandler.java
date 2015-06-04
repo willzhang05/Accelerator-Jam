@@ -7,15 +7,12 @@ import java.util.ArrayList;
 public class SmartVehicleHandler{
 
    private int height;
-//   private int leftBound = 97;
-//   private int rightBound = 503;
-   private Lane laneOne = new Lane(66);
-   private Lane laneTwo = new Lane(66);
-   private Lane laneThree = new Lane(66);
-   private Lane laneFour = new Lane(66);
+   private Lane laneOne = new Lane(148);   //97-503
+   private Lane laneTwo = new Lane(249);
+   private Lane laneThree = new Lane(351);
+   private Lane laneFour = new Lane(452);
    private ArrayList<SmartVehicleObject> vehicles = new ArrayList<SmartVehicleObject>();
    private int nextVehicleID = 0;
-//   private int laneWidth = leftBound + (rightBound-leftBound)/lanes;
    private Graphics myBuffer;
    public PlayerObject player;
 
@@ -30,6 +27,7 @@ public class SmartVehicleHandler{
          vehicle.draw(myBuffer);
       }
    }
+
 /*
    public void createVehicle(Lane lane, VehicleType vehicleType){                               //
       vehicles.add(new SmartVehicleObject(laneWidth*(lane-1)+10, height, vehicleType));
@@ -37,25 +35,48 @@ public class SmartVehicleHandler{
       nextVehicleID += 1;
    }
 */
+
    public SmartVehicleObject[] getVehicles(){
       SmartVehicleObject[] returnList = {};
       returnList = vehicles.toArray(returnList);
       return returnList;
    }
+
+   public void addVehicle(SmartVehicleObject newSmartVehicleObject){
+       vehicles.add(newSmartVehicleObject);
+   }
+
    public int getHeight(){
       return height;
    }
    public void setHeight(int newHeight){
       height = newHeight;
    }
+
+
+
+
+
+
+
+
    private class Lane{
       private int median;
       private SmartVehicleObject firstVehicle;
       private SmartVehicleObject secondVehicle;
+
       public Lane(int startMedian){
          median = startMedian;
       }
-      public void putVehicle(){}
+
+      public void putVehicle(){
+         addVehicle(new SmartVehicleObject(median, height, new VehicleType()));
+         vehicles.get(nextVehicleID).setX(median-vehicles.get(nextVehicleID).getWidth()/2);
+         vehicles.get(nextVehicleID).setSpeed(10);
+         firstVehicle = vehicles.get(nextVehicleID);
+         nextVehicleID += 1;
+      }
+
       public SmartVehicleObject getSecondVehicle(){
          return secondVehicle;
       }
