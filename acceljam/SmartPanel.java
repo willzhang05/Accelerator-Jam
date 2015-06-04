@@ -8,7 +8,7 @@ public class SmartPanel extends JPanel{
       super();
       frame = startFrame;
    }
-   public void changeFrame(JPanel newPanel){
+   public void changePanel(JPanel newPanel){
       frame.setContentPane(newPanel);
       frame.revalidate();
    }
