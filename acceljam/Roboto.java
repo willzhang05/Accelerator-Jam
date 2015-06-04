@@ -7,6 +7,6 @@ import java.io.File;
 
 public class Roboto extends CustomFont {
     public Roboto(int style, int size){
-        super("resources/fonts/Robot-Regular.ttf", style, size);
+        super("resources/fonts/Roboto-Regular.ttf", style, size);
    }
 }

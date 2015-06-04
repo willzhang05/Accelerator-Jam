@@ -17,7 +17,7 @@ public class MainMenu extends JFrame {
 			addActionListener(new listener());
 		}
 	}
-	private class Listener1 implements ActionListener {
+	public class Listener1 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             EventQueue.invokeLater(new Runnable() {
                 
@@ -28,7 +28,7 @@ public class MainMenu extends JFrame {
             });
         }
     }
-    private class Listener2 implements ActionListener {
+    public class Listener2 implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             System.exit(0);
         }
