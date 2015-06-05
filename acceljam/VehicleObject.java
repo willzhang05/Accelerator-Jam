@@ -97,6 +97,10 @@ public class VehicleObject extends RelativeObject{
       topHandlingSpeed = newTopHandlingSpeed;
    }
    
+   public int getTopHandlingSpeed(){
+      return topHandlingSpeed;
+   }
+   
    public int getAcceleration(){
       return acceleration;
    }
