@@ -10,6 +10,7 @@ public class Sound{
   private URL file;
   private AudioInputStream audioIn;
   private Clip clip;
+  private FloatControl gainControl;
   
   public Sound(String startFile){
     try{
@@ -17,6 +18,7 @@ public class Sound{
       audioIn = AudioSystem.getAudioInputStream(file);
       clip = AudioSystem.getClip();
       clip.open(audioIn);
+      gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
     } catch (UnsupportedAudioFileException exception) {
        exception.printStackTrace();
     } catch (IOException exception) {
@@ -51,9 +53,13 @@ public class Sound{
      clip.setFramePosition(0);
   }
 
+  public void changeVolume(float decibels){
+     gainControl.setValue(decibels);
+  }
+
   public static void main(String[] args) throws Exception {
-     Sound me = new Sound("test.wav");
-     me.loop(1);
+     Sound test = new Sound("test.wav");
+     test.loop(1);
      Thread.sleep(7000);
   }
 
