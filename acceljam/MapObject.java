@@ -7,7 +7,7 @@ public class MapObject extends RelativeObject{
 
 
    public MapObject(int N, String image){
-      super(0, 0, N, 2*N, "maps\\"+image);
+      super(0, 0, N, 2*N, "maps/"+image);
    }
 
    public void draw(Graphics myBuffer){                                                         //Background object

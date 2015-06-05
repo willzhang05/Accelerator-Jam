@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public abstract class GameObject{
 
    private int speed = 0;
-   private String imagePath = "acceljam\\Resources\\";
+   private String imageName = "acceljam/Resources/";
    private int x;
    private int y;
    private int width;

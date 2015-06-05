@@ -13,7 +13,7 @@ public class VehicleType{
    private int topSpeed = 70;
    private int topHandlingSpeed = 3;
    private int minHandlingSpeed = 1;
-   private String imagePath = "acceljam\\Resources\\Vehicles\\";
+   private String imagePath = "acceljam/Resources/Vehicles/";
    private String name;
    private static String[] vehicleOptions = {"boxvan", "coupe", "flatbed", "hatch", 
                                       "luxury", "pickup1", "pickup2", "taxi",
@@ -32,7 +32,7 @@ public class VehicleType{
 
    public void readData(){
       try{
-         Scanner reader = new Scanner(new File("acceljam\\Resources\\Vehicles\\VehicleInfo\\"+name+".vehicle"));
+         Scanner reader = new Scanner(new File("acceljam/Resources/Vehicles/VehicleInfo/"+name+".vehicle"));
 
          while(reader.hasNext()){
             String nextData = reader.next();
@@ -56,7 +56,7 @@ public class VehicleType{
          }
       }catch(Exception FileNotFoundException){
          System.out.println("Non-existant file path followed: ");
-         System.out.print("acceljam\\Resources\\Vehicles\\VehicleInfo\\"+name+".vehicle");
+         System.out.print("acceljam/Resources/Vehicles/VehicleInfo/"+name+".vehicle");
          System.exit(0);
       }
    }
