@@ -50,7 +50,7 @@ public class mainMenu extends SmartPanel {
 		menuButton button2 = new menuButton("Quit", font, new Listener2());
 		panel.add(button2);
 		
-		label2 = new JLabel("By Antioch Sanders and William Zhang");
+		label2 = new JLabel("By Antioch Sanders and William Zhang           Partial sound credits to: http://www.freesfx.co.uk/");
 		label2.setFont(font);
 		label2.setForeground(Color.decode("#EEEEEE"));
 		label2.setAlignmentX(Component.CENTER_ALIGNMENT);

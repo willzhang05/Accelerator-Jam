@@ -4,7 +4,8 @@ import javax.swing.*;
 import java.awt.Graphics;
 
 public class PlayerObject extends VehicleObject{
-
+   private boolean impacted = false;
+   
    public PlayerObject(int startX, int startY, VehicleType data){
       super(startX, startY, data);
    }
@@ -12,20 +13,28 @@ public class PlayerObject extends VehicleObject{
    public void moveDirection(int frameNumber){                                                    //Player
       if(getX()+getDirection()*getHandlingSpeed()<getLeftBound()){
          setX(getLeftBound());
+         makeRoadImpact();
       }
       else if(getX()+getDirection()*getHandlingSpeed()+getWidth()>getRightBound()){
          setX(getRightBound()-getWidth());
+         makeRoadImpact();
       }
       else{
          setX(getX()+getDirection()*getHandlingSpeed());
+         impacted = false;
       }
+      updateHandlingSpeed(frameNumber);
+   }
 
+   public void updateHandlingSpeed(int frameNumber){
       if (getHandlingSpeed() + getHandlingAcceleration() <= getTopHandlingSpeed()){
-         if (frameNumber%10 == 0)
+         if (frameNumber%10 == 0){
             setHandlingSpeed(getHandlingSpeed() + getHandlingAcceleration());
+         }
       }
-      else
+      else{
          setHandlingSpeed(getTopHandlingSpeed());
+      }
    }
    
    public boolean checkDeath(SmartVehicleHandler handler){
@@ -35,5 +44,13 @@ public class PlayerObject extends VehicleObject{
             return true;
       }
       return false;
+   }
+   
+   public void makeRoadImpact(){
+      if(!impacted){
+         Sound bonk = new Sound("roadImpact.wav");
+         bonk.play();
+         impacted = true;
+      }
    }
 }

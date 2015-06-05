@@ -35,10 +35,10 @@ public class GameOverPanel extends SmartPanel{
         }
     }
     public GameOverPanel(JFrame frame, int score){
-        super(frame);
-        setFocusable(true);
-		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
-		setBackground(Color.decode("#1E88E5"));
+      super(frame);
+      setFocusable(true);
+	  	setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+	   setBackground(Color.decode("#1E88E5"));
 		
 		label1 = new JLabel("Game Over");
 		label1.setFont(largeFont);
@@ -63,6 +63,9 @@ public class GameOverPanel extends SmartPanel{
 		panel.add(button2);
 		menuButton button3 = new menuButton("Quit", font, new Listener3());
 		panel.add(button3);
+      
+      Sound crash = new Sound("crash.wav");
+      crash.play();
     }
     public void paintComponent(Graphics pen){
 		pen.clearRect(0, 0, getWidth(), getHeight());
