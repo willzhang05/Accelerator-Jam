@@ -14,10 +14,12 @@ public class PlayerObject extends VehicleObject{
       if(getX()+getDirection()*getHandlingSpeed()<getLeftBound()){
          setX(getLeftBound());
          makeRoadImpact();
+         setSpeed(getMinSpeed());
       }
       else if(getX()+getDirection()*getHandlingSpeed()+getWidth()>getRightBound()){
          setX(getRightBound()-getWidth());
          makeRoadImpact();
+         setSpeed(getMinSpeed());
       }
       else{
          setX(getX()+getDirection()*getHandlingSpeed());
