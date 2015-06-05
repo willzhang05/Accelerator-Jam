@@ -10,7 +10,7 @@ public class RelativeObject extends GameObject{
    }
 
    public void draw(Graphics myBuffer){                                                       //Vehicle
-      ImageIcon myPortrait = new ImageIcon(getImageName());
+      ImageIcon myPortrait = new ImageIcon(getImagePath());
       myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
                                                 getWidth() , getHeight(), null);
    }

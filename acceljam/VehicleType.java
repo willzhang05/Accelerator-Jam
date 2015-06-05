@@ -15,7 +15,7 @@ public class VehicleType{
    private int minHandlingSpeed = 1;
    private String imagePath = "acceljam\\Resources\\Vehicles\\";
    private String name;
-   private String[] vehicleOptions = {"boxvan", "coupe", "flatbed", "hatch", 
+   private static String[] vehicleOptions = {"boxvan", "coupe", "flatbed", "hatch", 
                                       "luxury", "pickup1", "pickup2", "taxi",
                                       "van"};
 

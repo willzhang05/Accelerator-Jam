@@ -5,32 +5,27 @@ import java.awt.Graphics;
 
 public class PlayerObject extends VehicleObject{
 
-   private int handlingSpeed = 0;
-   private int handlingAcceleration = 1;
-   private int topHandlingSpeed = 30;
-   private int minHandlingSpeed = 1;
-
    public PlayerObject(int startX, int startY, VehicleType data){
       super(startX, startY, data);
    }
 
    public void moveDirection(int frameNumber){                                                    //Player
-      if(getX()+getDirection()*handlingSpeed<getLeftBound()){
+      if(getX()+getDirection()*getHandlingSpeed()<getLeftBound()){
          setX(getLeftBound());
       }
-      else if(getX()+getDirection()*handlingSpeed+getWidth()>getRightBound()){
+      else if(getX()+getDirection()*getHandlingSpeed()+getWidth()>getRightBound()){
          setX(getRightBound()-getWidth());
       }
       else{
-         setX(getX()+getDirection()*handlingSpeed);
+         setX(getX()+getDirection()*getHandlingSpeed());
       }
 
-      if (handlingSpeed + handlingAcceleration <= topHandlingSpeed){
+      if (getHandlingSpeed() + getHandlingAcceleration() <= getTopHandlingSpeed()){
          if (frameNumber%10 == 0)
-            handlingSpeed += handlingAcceleration;
+            setHandlingSpeed(getHandlingSpeed() + getHandlingAcceleration());
       }
       else
-         handlingSpeed = topHandlingSpeed;
+         setHandlingSpeed(getTopHandlingSpeed());
    }
    
    public boolean checkDeath(SmartVehicleHandler handler){
@@ -41,28 +36,4 @@ public class PlayerObject extends VehicleObject{
       }
       return false;
    }
-   
-   public void setHandlingSpeed(int newHandling){
-      handlingSpeed = newHandling;
-   }
-   public int getHandlingSpeed(){
-      return handlingSpeed;
-   }
-   
-   public void setHandlingAcceleration(int newHandlingAcceleration){
-      handlingAcceleration = newHandlingAcceleration;
-   }
-   
-   public int getHandlingAcceleration(){
-      return handlingAcceleration;
-   }
-   
-   public void setMinHandlingSpeed(int newMinHandlingSpeed){
-      minHandlingSpeed = newMinHandlingSpeed;
-   }
-   
-   public int getMinHandlingSpeed(){
-      return minHandlingSpeed;
-   }
-
 }

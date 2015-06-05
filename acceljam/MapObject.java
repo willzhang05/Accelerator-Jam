@@ -11,7 +11,7 @@ public class MapObject extends RelativeObject{
    }
 
    public void draw(Graphics myBuffer){                                                         //Background object
-      ImageIcon myPortrait = new ImageIcon(getImageName());
+      ImageIcon myPortrait = new ImageIcon(getImagePath());
       myBuffer.drawImage(myPortrait.getImage(), getX(), getY(),
                                                 getWidth() , getHeight(), null);
       if (getY()>=-20){

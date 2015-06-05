@@ -6,18 +6,18 @@ import java.awt.Graphics;
 public abstract class GameObject{
 
    private int speed = 0;
-   private String imageName = "acceljam\\Resources\\";
+   private String imagePath = "acceljam\\Resources\\";
    private int x;
    private int y;
    private int width;
    private int height;
 
-   public GameObject(int startX, int startY, int startWidth, int startHeight, String startImage){     //Constructor
+   public GameObject(int startX, int startY, int startWidth, int startHeight, String startImagePath){     //Constructor
       x = startX;
       y = startY;
       width = startWidth;
       height = startHeight;
-      imageName += startImage;
+      imagePath += startImagePath;
    }
 
    public abstract void draw(Graphics myBuffer);
@@ -75,7 +75,7 @@ public abstract class GameObject{
       height = newHeight;
    }
 
-   public void setSpeed(int newSpeed){                                                            //Everyone
+   public void setSpeed(int newSpeed){
       speed = newSpeed;
    }
 
@@ -83,11 +83,11 @@ public abstract class GameObject{
       return speed;
    }
    
-   public String getImageName(){
-      return imageName;
+   public String getImagePath(){
+      return imagePath;
    }
    
-   public void setImageName(String newImageName){
-      imageName = newImageName;
+   public void setImagePath(String newImagePath){
+      imagePath = newImagePath;
    }
 }
