@@ -11,7 +11,15 @@ public class VehicleSelectorPanel extends SmartPanel {
     private BufferedImage myImage;
     private Graphics myBuffer;
     private final int N = 600;
-    public String[] cars;
+    private int circleX = 150; //300 is center
+    private int circleY = circleX*3/4;
+    private int circleWidth = N-2*circleX;
+    private int circleHeight = N-2*circleY;
+    private String[] vehicles = {"boxvan", "coupe", "flatbed",
+                                "hatch", "luxury", "pickup1",
+                                    "pickup2", "taxi", "van"};
+    private int currentVehicle = 0;
+    private VehicleData currentVehicleData;
 
     public VehicleSelectorPanel(JFrame startFrame){
         super(startFrame);
@@ -21,25 +29,18 @@ public class VehicleSelectorPanel extends SmartPanel {
         setFocusable(true);
     }
     public void paintComponent(Graphics pen){
-        drawPanel();
+        myBuffer.setColor(Color.decode("#EEEEEE"));
+        myBuffer.fillRect(0, 0, N, N);
+        ImageIcon platform = new ImageIcon("acceljam/Resources/Materials/circle.png");
+        myBuffer.drawImage(platform.getImage(), circleX, circleY,
+                                 circleWidth , circleHeight, null);
+        currentVehicleData = new VehicleData(vehicles[currentVehicle]);
+        ImageIcon carToDisplay = new ImageIcon(currentVehicleData.getImagePath());
+        myBuffer.drawImage(carToDisplay.getImage(), N/2-currentVehicleData.getWidth()/2, 
+                           N/2-currentVehicleData.getHeight()/2, currentVehicleData.getWidth(), currentVehicleData.getHeight(), null);
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
     }
 
-    public void drawPanel(){
-        myBuffer.setColor(Color.decode("#EEEEEE"));
-        myBuffer.fillRect(0, 0, N, N);
-        ImageIcon myPortrait = new ImageIcon("acceljam/Resources/Materials/circle.png");
-        myBuffer.drawImage(myPortrait.getImage(), 200, 150,
-                                   200 , 266, null);
-        getCarToView();
-        myBuffer.setColor(Color.BLACK);
-        drawStats();
-    }
-    private void getCarToView(){}
-    private void drawStats(){}
-    private void getCars(){
-    }
-    
     private class NextLeftCar implements ActionListener{
         public void actionPerformed(ActionEvent e){
 //            stuff()
@@ -48,7 +49,7 @@ public class VehicleSelectorPanel extends SmartPanel {
 
     private class NextRightCar implements ActionListener{
         public void actionPerformed(ActionEvent e){
-//            syuff()
+//            stuff()
         }
     }
 }
