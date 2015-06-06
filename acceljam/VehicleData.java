@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Random;
 import java.io.*;
 
-public class VehicleType{
+public class VehicleData{
 
    private int width = 40;
    private int height = 70;
@@ -19,18 +19,18 @@ public class VehicleType{
                                       "luxury", "pickup1", "pickup2", "taxi",
                                       "van"};
 
-   public VehicleType(String startName){
+   public VehicleData(String startName){
       name = startName;
-      readData();
+      loadData();
    }
 
-   public VehicleType(){
+   public VehicleData(){
       Random random = new Random(); 
       name = vehicleOptions[random.nextInt(vehicleOptions.length)];
-      readData();
+      loadData();
    }
 
-   public void readData(){
+   public void loadData(){
       try{
          Scanner reader = new Scanner(new File("acceljam/Resources/Vehicles/VehicleInfo/"+name+".vehicle"));
 

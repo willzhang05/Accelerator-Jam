@@ -48,7 +48,7 @@ public class GamePanel extends SmartPanel {
      		       }
 	         }
 	     }
-        player = new PlayerObject(N/2 - 35, 485, new VehicleType(vehicleToUse));
+        player = new PlayerObject(N/2 - 35, 485, new VehicleData(vehicleToUse));
 
         handler = new SmartVehicleHandler(player, myBuffer, -1000);
         player.setSpeed(player.getData().getMinSpeed());

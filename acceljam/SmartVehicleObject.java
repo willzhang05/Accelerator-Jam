@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class SmartVehicleObject extends VehicleObject{
 
-   public SmartVehicleObject(int startX, int startY, VehicleType startData){
+   public SmartVehicleObject(int startX, int startY, VehicleData startData){
       super(startX, startY, startData);
    }
 

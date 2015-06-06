@@ -6,7 +6,7 @@ import java.awt.Graphics;
 public class PlayerObject extends VehicleObject{
    private boolean impacted = false;
    
-   public PlayerObject(int startX, int startY, VehicleType data){
+   public PlayerObject(int startX, int startY, VehicleData data){
       super(startX, startY, data);
    }
 

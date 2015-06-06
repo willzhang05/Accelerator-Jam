@@ -9,8 +9,15 @@ import java.awt.event.ActionListener;
 
 public class main {
     public static void main(String[] args) throws Exception {
-		frame game = new frame();
-		game.setContentPane(new mainMenu(game));
-		game.setVisible(true);
+        frame game = new frame();
+
+        boolean underConstruction = true;
+
+        if(underConstruction)
+            game.setContentPane(new hardHatPanel(game));
+        else
+            game.setContentPane(new mainMenu(game));
+
+        game.setVisible(true);
 	}
 }

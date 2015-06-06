@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class VehicleObject extends RelativeObject{
 
-   private VehicleType data;
+   private VehicleData data;
    public int RIGHT = 1;
    public int LEFT = -1;
    public int NO_DIR = 0;
@@ -20,7 +20,7 @@ public class VehicleObject extends RelativeObject{
    private int minSpeed;
    private int topSpeed;
 
-   public VehicleObject(int startX, int startY, VehicleType startData){
+   public VehicleObject(int startX, int startY, VehicleData startData){
       super(startX, startY, startData.getWidth(), startData.getHeight(), startData.getImagePath());
       data = startData;
       loadFromData();
@@ -61,11 +61,11 @@ public class VehicleObject extends RelativeObject{
       return rightBound;
    }
 
-   public void setData(VehicleType newData){
+   public void setData(VehicleData newData){
       data = newData;
    }
    
-   public VehicleType getData(){
+   public VehicleData getData(){
       return data;
    }
 

@@ -16,7 +16,6 @@ public class SmartVehicleHandler{
    private int nextVehicleID = 0;
    private Graphics myBuffer;
    public PlayerObject player;
-   private String[] vehicleTypes = {};
    private Random random = new Random();
 
    public SmartVehicleHandler(PlayerObject startPlayer, Graphics startBuffer, int startHeight){//Constructor
@@ -62,8 +61,8 @@ public class SmartVehicleHandler{
 
    private class Lane{
       private int median;
-      private SmartVehicleObject firstVehicle = new SmartVehicleObject(0, 99999, new VehicleType());
-      private SmartVehicleObject secondVehicle = new SmartVehicleObject(0, height, new VehicleType());
+      private SmartVehicleObject firstVehicle = new SmartVehicleObject(0, 99999, new VehicleData());
+      private SmartVehicleObject secondVehicle = new SmartVehicleObject(0, height, new VehicleData());
 
       public Lane(int startMedian){
          median = startMedian;
@@ -77,7 +76,7 @@ public class SmartVehicleHandler{
              vehicles.get(nextVehicleID).setSpeed(15);
              vehicles.get(nextVehicleID).setY(height);
              nextVehicleID += 1;
-             secondVehicle = new SmartVehicleObject(0, height, new VehicleType());
+             secondVehicle = new SmartVehicleObject(0, height, new VehicleData());
          }
       }
 
