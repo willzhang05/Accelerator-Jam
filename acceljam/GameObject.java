@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.Graphics;
 
 public abstract class GameObject{
-
    private int speed = 0;
    private String imagePath = "acceljam/Resources/";
    private int x;
    private int y;
    private int width;
    private int height;
+   private int hitboxMargin;
 
    public GameObject(int startX, int startY, int startWidth, int startHeight, String startImagePath){     //Constructor
       x = startX;
@@ -23,24 +23,11 @@ public abstract class GameObject{
    public abstract void draw(Graphics myBuffer);
 
    public boolean checkCollision(GameObject rect){
-      if(x>rect.getX()+rect.getWidth() || x+width<rect.getX())
+      if(x+getHitboxMargin() > rect.getX() + rect.getWidth() - rect.getHitboxMargin() || x + width-getHitboxMargin()<rect.getX()+rect.getHitboxMargin())
          return false;
-      if(y>rect.getY()+rect.getHeight() || y+height<rect.getY())
+      if(y > rect.getY() + rect.getHeight() || y + height < rect.getY() )
          return false;
       return true;
-   }
-
-   public void moveX(int dx){
-      x += dx;
-   }
-   
-   public void moveY (int dy){
-      y += dy;
-   }
-   
-   public void move(int dx, int dy){
-      x += dx;
-      y += dy;
    }
 
    public int getX(){
@@ -81,6 +68,14 @@ public abstract class GameObject{
 
    public int getSpeed(){
       return speed;
+   }
+   
+   public int getHitboxMargin(){
+      return hitboxMargin;
+   }
+   
+   public void setHitboxMargin(int newHitboxMargin){
+      hitboxMargin = newHitboxMargin;
    }
    
    public String getImagePath(){

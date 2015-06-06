@@ -35,92 +35,72 @@ public class VehicleObject extends RelativeObject{
       setTopSpeed(data.getTopSpeed());
       setTopHandlingSpeed(data.getTopHandlingSpeed());
       setMinHandlingSpeed(data.getMinHandlingSpeed());
+      setHitboxMargin(data.getHitboxMargin());
    }
 
    public int getDirection(){
       return direction;
    }
-
    public void setDirection(int newDirection){
       direction = newDirection;
    }
-   
    public void setLeftBound(int newLeftBound){
       leftBound = newLeftBound;
    }
-   
    public int getLeftBound(){
       return leftBound;
    }
-   
    public void setRightBound(int newRightBound){
       rightBound = newRightBound;
    }
-   
    public int getRightBound(){
       return rightBound;
    }
-
    public void setData(VehicleData newData){
       data = newData;
    }
-   
    public VehicleData getData(){
       return data;
    }
-
    public void setHandlingSpeed(int newHandling){
       handlingSpeed = newHandling;
    }
-
    public int getHandlingSpeed(){
       return handlingSpeed;
    }
-   
    public void setHandlingAcceleration(int newHandlingAcceleration){
       handlingAcceleration = newHandlingAcceleration;
    }
-   
    public int getHandlingAcceleration(){
       return handlingAcceleration;
    }
-   
    public void setMinHandlingSpeed(int newMinHandlingSpeed){
       minHandlingSpeed = newMinHandlingSpeed;
    }
-   
    public int getMinHandlingSpeed(){
       return minHandlingSpeed;
    }
-   
    public void setTopHandlingSpeed(int newTopHandlingSpeed){
       topHandlingSpeed = newTopHandlingSpeed;
    }
-   
    public int getTopHandlingSpeed(){
       return topHandlingSpeed;
    }
-   
    public int getAcceleration(){
       return acceleration;
    }
-   
    public void setAcceleration(int newAcceleration){
       acceleration = newAcceleration;
    }
-   
    public void setTopSpeed(int newTopSpeed){
       topSpeed = newTopSpeed;
    }
-   
    public int getTopSpeed(int newTopSpeed){
       return topSpeed;
    }
-   
    public void setMinSpeed(int newMinSpeed){
       minSpeed = newMinSpeed;
    }
-   
    public int getMinSpeed(){
       return minSpeed;
    }

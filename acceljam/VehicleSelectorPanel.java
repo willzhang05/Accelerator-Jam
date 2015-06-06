@@ -18,7 +18,7 @@ public class VehicleSelectorPanel extends SmartPanel {
     private String[] vehicles = {"boxvan", "coupe", "flatbed",
                                 "hatch", "luxury", "pickup1",
                                     "pickup2", "taxi", "van"};
-    private int currentVehicle = 0;
+    private int currentVehicle = 2;
     private VehicleData currentVehicleData;
 
     public VehicleSelectorPanel(JFrame startFrame){
@@ -29,15 +29,24 @@ public class VehicleSelectorPanel extends SmartPanel {
         setFocusable(true);
     }
     public void paintComponent(Graphics pen){
-        myBuffer.setColor(Color.decode("#EEEEEE"));
+        myBuffer.setColor(Color.decode("#DDDDDD"));
         myBuffer.fillRect(0, 0, N, N);
-        ImageIcon platform = new ImageIcon("acceljam/Resources/Materials/circle.png");
-        myBuffer.drawImage(platform.getImage(), circleX, circleY,
-                                 circleWidth , circleHeight, null);
+//        ImageIcon platform = new ImageIcon("acceljam/Resources/Materials/circle.png");
+//        myBuffer.drawImage(platform.getImage(), circleX, circleY,
+//                                 circleWidth , circleHeight, null);
+        myBuffer.setColor(Color.white);
+        myBuffer.fillOval(circleX, circleY, circleWidth , circleHeight);
         currentVehicleData = new VehicleData(vehicles[currentVehicle]);
         ImageIcon carToDisplay = new ImageIcon(currentVehicleData.getImagePath());
         myBuffer.drawImage(carToDisplay.getImage(), N/2-currentVehicleData.getWidth()/2, 
                            N/2-currentVehicleData.getHeight()/2, currentVehicleData.getWidth(), currentVehicleData.getHeight(), null);
+        myBuffer.setColor(Color.black);
+
+        myBuffer.setFont(new Roboto(1, 40));
+        myBuffer.drawString("Top Speed: "+currentVehicleData.getTopSpeed(), 10, 500);
+        myBuffer.drawString("Acceleration: "+currentVehicleData.getAcceleration(), 10, 520);
+        myBuffer.drawString("Top Turn Speed"+currentVehicleData.getTopHandlingSpeed(), 10, 540);
+
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
     }
 

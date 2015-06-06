@@ -5,4 +5,5 @@ minSpeed 20
 topSpeed 105
 topHandlingSpeed 2
 minHandlingSpeed 2
+hitboxMargin 4
 imagePath flatbed.png

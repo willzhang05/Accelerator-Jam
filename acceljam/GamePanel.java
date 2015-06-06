@@ -66,6 +66,7 @@ public class GamePanel extends SmartPanel {
         }
     }
     public void update(){                               //Update game
+        checkGameOver();
         myBuffer.clearRect(0,0, N, N);
         background.draw(myBuffer);
         background.moveRelativeTo(player);
@@ -81,7 +82,6 @@ public class GamePanel extends SmartPanel {
 		myBuffer.setFont(font);
         score += player.getSpeed()/10;
         myBuffer.drawString("Score: " + score, 30, 300);
-        checkGameOver();
     }
     public void checkGameOver(){
         if(player.checkDeath(handler)){

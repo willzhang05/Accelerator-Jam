@@ -13,6 +13,7 @@ public class VehicleData{
    private int topSpeed = 70;
    private int topHandlingSpeed = 3;
    private int minHandlingSpeed = 1;
+   private int hitboxMargin = 4;
    private String imagePath = "acceljam/Resources/Vehicles/";
    private String name;
    private static String[] vehicleOptions = {"boxvan", "coupe", "flatbed", "hatch", 
@@ -51,6 +52,8 @@ public class VehicleData{
                setTopHandlingSpeed(reader.nextInt());
             else if (nextData.equals("minHandlingSpeed"))
                setMinHandlingSpeed(reader.nextInt());
+            else if (nextData.equals("hitboxMargin"))
+               setHitboxMargin(reader.nextInt());
             else if (nextData.equals("imagePath"))
                setImagePath(getImagePath()+reader.next());
          }
@@ -64,71 +67,60 @@ public class VehicleData{
    public int getWidth(){
       return width;
    }
-
    public void setWidth(int newWidth){
       width = newWidth;
    }
-   
    public int getHeight(){
       return height;
    }
-
    public void setHeight(int newHeight){
       height = newHeight;
    }
-   
    public int getAcceleration(){
       return acceleration;
    }
-
    public void setAcceleration(int newAcceleration){
       acceleration = newAcceleration;
    }
-
    public void setMinSpeed(int newMinSpeed){
       minSpeed = newMinSpeed;
    }
-
    public int getMinSpeed(){
       return minSpeed;
    }
-
    public int getTopSpeed(){
       return topSpeed;
    }
-
    public void setTopSpeed(int newTopSpeed){
       topSpeed = newTopSpeed;
    }
-
    public int getTopHandlingSpeed(){
       return topHandlingSpeed;
    }
-
    public void setTopHandlingSpeed(int newTopHandlingSpeed){
       topHandlingSpeed = newTopHandlingSpeed;
    }
-
    public int getMinHandlingSpeed(){
       return minHandlingSpeed;
    }
-
    public void setMinHandlingSpeed(int newMinHandlingSpeed){
       minHandlingSpeed = newMinHandlingSpeed;
    }
-
+   public int getHitboxMargin(){
+      return hitboxMargin;
+   }
+   public void setHitboxMargin(int newHitboxMargin){
+      hitboxMargin = newHitboxMargin;
+   }
    public String getName(){
       return name;
    }
-
    public void setName(String newName){
       name = newName;
    }
-   
    public String getImagePath(){
       return imagePath;
    }
-
    public void setImagePath(String newImagePath){
       imagePath = newImagePath;
    }
