@@ -5,6 +5,33 @@ import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
 
+public interface RelativeObjectHandler{
+    private int height;
+
+
+
+
+
+
+
+    interface Lane{
+        public Lane(int startMedian){
+            median = startMedian;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
 public class SmartVehicleHandler{
 
    private int height;
@@ -80,4 +107,4 @@ public class SmartVehicleHandler{
          }
       }
    }
-}
+}*/

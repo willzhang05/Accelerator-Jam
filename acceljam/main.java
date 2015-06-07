@@ -11,7 +11,7 @@ public class main {
     public static void main(String[] args) throws Exception {
         frame game = new frame();
 
-        boolean underConstruction = true;
+        boolean underConstruction = false;
 
         if(underConstruction)
             game.setContentPane(new hardHatPanel(game));

@@ -4,10 +4,11 @@ import javax.swing.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
+import java.lang.reflect.*;
 
 public class ObjectFactory<T1 extends RelativeObject>{
     private int height;
-    private Lane laneOne = new Lane(148);   //97-503
+    private Lane laneOne = new Lane(148);
     private Lane laneTwo = new Lane(249);
     private Lane laneThree = new Lane(351);
     private Lane laneFour = new Lane(452);
@@ -23,7 +24,6 @@ public class ObjectFactory<T1 extends RelativeObject>{
         player = startPlayer;
     }
     public void update(){                                                                       //move and draw vehicles
-        
         for(T1 object: getObjects()){
             object.moveRelativeTo(player);
             object.draw(myBuffer);
@@ -61,10 +61,12 @@ public class ObjectFactory<T1 extends RelativeObject>{
 
     private class Lane{
         private int median;
-        private T1 firstObject = new T1(0, 99999, new VehicleData());
-        private T1 secondObject = new T1(0, height, new VehicleData());
+        if()
 
-        public Lane(int startMedian){
+
+        public Lane(int startMedian, Method creationMethod){
+            firstObject = creationMethod.invoke(null, null);
+            secondObject = creationMethod.invoke(null, null);
             median = startMedian;
         }
 
@@ -92,5 +94,10 @@ public class ObjectFactory<T1 extends RelativeObject>{
         public void setFirstObject(T1 newFirstObject){
             firstObject = newFirstObject;
         }
+    }
+    
+    
+    public SmartVehicleObject newSmartVehicleObject(){
+        return new SmartVehicleObject(0, height, new VehicleData());
     }
 }
