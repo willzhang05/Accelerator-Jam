@@ -59,7 +59,7 @@ public class SmartVehicleHandler{
       height = newHeight;
    }
 
-   private class Lane{
+   interface Lane{
       private int median;
       private SmartVehicleObject firstVehicle = new SmartVehicleObject(0, 99999, new VehicleData());
       private SmartVehicleObject secondVehicle = new SmartVehicleObject(0, height, new VehicleData());
