@@ -4,7 +4,7 @@
 package acceljam;
 
 
-public class main {
+public class AccelJamDriver {
     public static void main(String[] args) throws Exception {
         frame game = new frame();
         game.setContentPane(new mainMenu(game));
