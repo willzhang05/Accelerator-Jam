@@ -1,6 +1,5 @@
 package acceljam;
 
-import javax.swing.*;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Random;
@@ -59,7 +58,7 @@ public class SmartVehicleHandler{
       height = newHeight;
    }
 
-   interface Lane{
+   public class Lane{
       private int median;
       private SmartVehicleObject firstVehicle = new SmartVehicleObject(0, 99999, new VehicleData());
       private SmartVehicleObject secondVehicle = new SmartVehicleObject(0, height, new VehicleData());
