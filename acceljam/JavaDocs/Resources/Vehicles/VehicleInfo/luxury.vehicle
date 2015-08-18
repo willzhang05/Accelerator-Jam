@@ -1,9 +1,0 @@
-width 75
-height 190
-acceleration 3
-minSpeed 25
-topSpeed 110
-topHandlingSpeed 6
-minHandlingSpeed 5
-hitboxMargin 4
-imagePath luxury.png

@@ -1,9 +1,0 @@
-width 74
-height 170
-acceleration 4
-minSpeed 45
-topSpeed 95
-topHandlingSpeed 6
-minHandlingSpeed 5
-hitboxMargin 4
-imagePath pickup1.png

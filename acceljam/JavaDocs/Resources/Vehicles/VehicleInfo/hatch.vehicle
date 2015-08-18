@@ -1,9 +1,0 @@
-width 69
-height 140
-acceleration 4
-minSpeed 45
-topSpeed 100
-topHandlingSpeed 5
-minHandlingSpeed 3
-hitboxMargin 4
-imagePath hatch.png

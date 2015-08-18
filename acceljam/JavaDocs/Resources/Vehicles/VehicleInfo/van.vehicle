@@ -1,9 +1,0 @@
-width 72
-height 153
-acceleration 3
-minSpeed 30
-topSpeed 70
-topHandlingSpeed 3
-minHandlingSpeed 1
-hitboxMargin 4
-imagePath van.png
