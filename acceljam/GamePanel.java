@@ -1,5 +1,4 @@
 package acceljam;
-import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -14,7 +13,6 @@ public class GamePanel extends SmartPanel {
     private int frameRate = 60;
     public final int N = 600;
     public int frameNumber = 0;
-    private int position = 0;
     public SmartVehicleHandler handler;
     private MapObject background;
     private Sound backgroundMusic;

@@ -1,8 +1,5 @@
 package acceljam;
 
-import javax.swing.*;
-import java.awt.Graphics;
-
 public class VehicleObject extends RelativeObject{
 
    private VehicleData data;

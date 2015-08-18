@@ -2,11 +2,7 @@
 //Date: 5/5/15
 //Base Frame
 package acceljam;
-import java.awt.EventQueue;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class frame extends JFrame {
 	public Roboto font, largeFont;

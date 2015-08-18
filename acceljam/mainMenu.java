@@ -2,7 +2,6 @@
 //Date: 5/5/15
 //Main Menu
 package acceljam;
-import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

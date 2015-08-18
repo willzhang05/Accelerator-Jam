@@ -1,12 +1,8 @@
 package acceljam;
-import java.awt.EventQueue;
 import javax.swing.*;
 import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.BorderLayout;
 import java.awt.Font;
-import java.awt.event.*;
-import java.awt.event.ActionListener;
 
 public class hardHatPanel extends SmartPanel{
     private String messageLineOne = "The core of Accelerator-Jam is being revised."; 

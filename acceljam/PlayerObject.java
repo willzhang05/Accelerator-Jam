@@ -1,8 +1,5 @@
 package acceljam;
 
-import javax.swing.*;
-import java.awt.Graphics;
-
 public class PlayerObject extends VehicleObject{
    private boolean impacted = false;
    
