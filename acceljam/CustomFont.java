@@ -8,7 +8,12 @@ import java.awt.GraphicsEnvironment;
 import java.io.File;
 
 public class CustomFont extends Font {
-    public CustomFont(String path, int style, int size){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1285282888274962107L;
+
+	public CustomFont(String path, int style, int size){
         super(path, style, size);
         try {
             Font font = Font.createFont(Font.TRUETYPE_FONT, new File(path));

@@ -7,7 +7,11 @@ import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class GamePanel extends SmartPanel {
-    public BufferedImage myImage;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -17312404049991312L;
+	public BufferedImage myImage;
     public Graphics myBuffer;
     private Timer updateTimer;
     private int frameRate = 60;

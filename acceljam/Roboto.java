@@ -4,7 +4,12 @@
 package acceljam;
 
 public class Roboto extends CustomFont {
-    public Roboto(int style, int size){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1710324260079919391L;
+
+	public Roboto(int style, int size){
         super("acceljam/resources/fonts/Roboto-Regular.ttf", style, size);
    }
 }

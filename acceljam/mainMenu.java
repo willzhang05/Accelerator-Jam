@@ -8,9 +8,18 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class mainMenu extends SmartPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5052721569216384301L;
 	private JPanel panel;
 	private JLabel label1, label2;
 	private class menuButton extends JButton {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -1869959247406688074L;
+
 		public menuButton(String text, Font font, ActionListener listener){
 			setText(text);
 			setFont(font);

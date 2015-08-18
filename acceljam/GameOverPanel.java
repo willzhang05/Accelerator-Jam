@@ -5,10 +5,19 @@ import java.awt.event.*;
 import java.awt.event.ActionListener;
 
 public class GameOverPanel extends SmartPanel{
-    public final int N = 600;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7871142781429525659L;
+	public final int N = 600;
 	private JPanel panel;
 	private JLabel label1, label2;
 	private class menuButton extends JButton {
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -8326132953313072002L;
+
 		public menuButton(String text, Font font, ActionListener listener){
 			setText(text);
 			setFont(font);

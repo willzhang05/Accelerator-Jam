@@ -5,7 +5,11 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class hardHatPanel extends SmartPanel{
-    private String messageLineOne = "The core of Accelerator-Jam is being revised."; 
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8330345079610706863L;
+	private String messageLineOne = "The core of Accelerator-Jam is being revised."; 
     private String messageLineTwo = "Thank you for your patience.";
     public hardHatPanel(JFrame frame){
         super(frame);

@@ -5,6 +5,10 @@ package acceljam;
 import javax.swing.*;
 
 public class frame extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8392426097919792968L;
 	public Roboto font, largeFont;
     public frame() throws Exception {
 		try {
