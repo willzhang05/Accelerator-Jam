@@ -57,6 +57,7 @@ public class VehicleData{
             else if (nextData.equals("imagePath"))
                setImagePath(getImagePath()+reader.next());
          }
+         reader.close();
       }catch(Exception FileNotFoundException){
          System.out.println("Non-existant file path followed: ");
          System.out.print("acceljam/Resources/Vehicles/VehicleInfo/"+name+".vehicle");
