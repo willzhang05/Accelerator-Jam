@@ -1,21 +1,23 @@
 package acceljam;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 
 public class VehicleSelectorPanel extends SmartPanel {
-    private BufferedImage myImage;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1593976398698918460L;
+	private BufferedImage myImage;
     private Graphics myBuffer;
     private final int N = 600;
     private int circleX = 150; //300 is center
-    private int circleY = circleX*3/4;
-    private int circleWidth = N-2*circleX;
-    private int circleHeight = N-2*circleY;
+    private int circleY = circleX * 3 / 4;
+    private int circleWidth = N - 2 * circleX;
+    private int circleHeight = N - 2 * circleY;
     private String[] vehicles = {"boxvan", "coupe", "flatbed",
-                                "hatch", "luxury", "pickup1",
-                                    "pickup2", "taxi", "van"};
+                                 "hatch", "luxury", "pickup1",
+                                 "pickup2", "taxi", "van"};
     private int currentVehicle = 2;
     private VehicleData currentVehicleData;
 
