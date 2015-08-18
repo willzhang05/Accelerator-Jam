@@ -4,8 +4,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
-import java.util.Scanner;
-import java.io.*;
 
 public class VehicleSelectorPanel extends SmartPanel {
     private BufferedImage myImage;
@@ -48,18 +46,6 @@ public class VehicleSelectorPanel extends SmartPanel {
         myBuffer.drawString("Top Turn Speed"+currentVehicleData.getTopHandlingSpeed(), 10, 540);
 
         pen.drawImage(myImage, 0, 0, getWidth(), getHeight(), null);
-    }
-
-    private class NextLeftCar implements ActionListener{
-        public void actionPerformed(ActionEvent e){
-//            stuff()
-        }
-    }
-
-    private class NextRightCar implements ActionListener{
-        public void actionPerformed(ActionEvent e){
-//            stuff()
-        }
     }
 }
 
