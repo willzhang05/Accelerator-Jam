@@ -83,7 +83,10 @@ public class GamePanel extends SmartPanel {
         myBuffer.setColor(Color.decode("#D81B60"));
 		myBuffer.setFont(font);
         score += player.getSpeed()/10;
-        myBuffer.drawString("Score: " + score, 30, 300);
+        myBuffer.setColor(new Color(100, 100, 100));
+        myBuffer.fillRect(N / 2 - 60, 0, 120, 40);
+        myBuffer.setColor(Color.red);
+        myBuffer.drawString("Score: " + score, N / 2 - 55, 30);
     }
     public void checkGameOver(){
         if(player.checkDeath(handler)){
