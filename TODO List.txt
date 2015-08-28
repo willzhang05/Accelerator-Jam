@@ -1,11 +1,5 @@
 -Finish car selector
 
--Finish implementing sound
-
 -Finish commenting
 
 -Finish menu's
-
--Create/ implement fast and easy panel switching
-
--Implement game over
